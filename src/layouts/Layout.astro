@@ -6,14 +6,11 @@ interface Props {
 }
 
 const { title = 'Sovereign Life OS' } = Astro.props;
-const currentUrl = Astro.url.pathname;
-const isEnglish = currentUrl === '/en' || currentUrl.startsWith('/en/');
-const isRomanian = currentUrl === '/ro' || currentUrl.startsWith('/ro/');
-const currentLocale = isEnglish ? 'en' : (isRomanian ? 'ro' : 'ro');
+const lang = Astro.currentLocale || 'ro';
 ---
 
 <!doctype html>
-<html lang={currentLocale}>
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -32,27 +29,13 @@ const currentLocale = isEnglish ? 'en' : (isRomanian ? 'ro' : 'ro');
 	</head>
 	<body class="bg-slate-950 text-white">
 		<!-- Language Selector -->
-		<div class="fixed top-4 right-4 z-50">
-			<div class="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-4 py-2 flex items-center gap-2">
-				<a 
-					href={isEnglish ? 
-						(currentUrl === '/en' ? '/ro' : currentUrl.replace('/en/', '/ro/')) : 
-						(isRomanian ? currentUrl : '/ro')}
-					class={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${currentLocale === 'ro' ? 'bg-emerald-500 text-white' : 'text-gray-300 hover:text-white'}`}
-				>
-					RO
-				</a>
-				<a 
-					href={isEnglish ? 
-						currentUrl : 
-						(isRomanian ? 
-							(currentUrl === '/ro' ? '/en' : currentUrl.replace('/ro/', '/en/')) : 
-							'/en')}
-					class={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${currentLocale === 'en' ? 'bg-emerald-500 text-white' : 'text-gray-300 hover:text-white'}`}
-				>
-					EN
-				</a>
-			</div>
+		<div class="fixed top-4 right-4 z-50 flex items-center gap-4">
+			<a href="/" class="text-white/70 hover:text-white font-medium">
+				RO
+			</a>
+			<a href="/en/" class="text-white/70 hover:text-white font-medium">
+				EN
+			</a>
 		</div>
 		<slot />
 	</body>
