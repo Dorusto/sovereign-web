@@ -2,101 +2,324 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Sovereign Life OS - Coming Soon">
+<Layout title="Sovereign Life OS - Your Private Digital Butler">
 	<div class="min-h-screen flex flex-col">
 		<!-- Navigation -->
 		<nav class="backdrop-blur-md bg-white/5 border-b border-white/10 sticky top-0 z-50">
-			<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+			<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 				<div class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
 					Sovereign Life OS
 				</div>
-				<div class="text-sm text-gray-400">Coming Soon</div>
+				<div class="text-sm text-gray-400">Private. Local. Yours.</div>
 			</div>
 		</nav>
 
 		<!-- Hero Section -->
-		<section class="flex-1 flex items-center justify-center px-6 py-20">
-			<div class="max-w-4xl mx-auto text-center">
+		<section class="relative px-6 py-24 md:py-32 overflow-hidden">
+			<!-- Animated background gradient -->
+			<div class="absolute inset-0 -z-10">
+				<div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+				<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+			</div>
+
+			<div class="max-w-5xl mx-auto text-center">
 				<!-- Main Title -->
-				<h1 class="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-					<span class="bg-gradient-to-r from-emerald-400 via-emerald-300 to-blue-500 bg-clip-text text-transparent">
-						Viitorul AI este local.
+				<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+					<span class="bg-gradient-to-r from-emerald-300 via-emerald-400 to-blue-500 bg-clip-text text-transparent">
+						Majordomul Digital
 					</span>
 					<br />
-					<span class="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-						Al tău.
-					</span>
+					<span class="text-white">care nu te spionează</span>
 				</h1>
 
 				<!-- Subtitle -->
-				<p class="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-					Sovereign Life OS centralizează finanțele, amintirile și casa ta pe propriul hardware.
-					<span class="block mt-2 text-emerald-400 font-semibold">Zero Cloud. Zero Spionaj.</span>
+				<p class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
+					Transformă-ți serverul într-un creier central care are grijă de finanțele, sănătatea și casa ta.
+					<span class="block mt-3 text-emerald-400 font-semibold text-lg">100% Local. 0% Cloud.</span>
 				</p>
 
-				<!-- Waitlist Form -->
-				<div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 max-w-md mx-auto mb-16 hover:bg-white/10 transition-all duration-300">
+				<!-- Waitlist Form - Prominent -->
+				<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 max-w-md mx-auto mb-16 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 shadow-2xl shadow-emerald-500/10">
 					<form id="waitlistForm" class="flex flex-col gap-4">
-						<input
-							type="email"
-							placeholder="your@email.com"
-							required
-							class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all"
-						/>
+						<div class="relative">
+							<input
+								type="email"
+								placeholder="your@email.com"
+								required
+								class="w-full px-4 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30 transition-all"
+							/>
+						</div>
 						<button
 							type="submit"
-							class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/50"
+							class="w-full px-6 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/50 active:scale-95"
 						>
-							Rezervă Acces Prioritar
+							Join Waitlist
 						</button>
 					</form>
-					<p id="successMessage" class="text-emerald-400 font-semibold mt-4 hidden">
-						✓ Mulțumim! Te-am adăugat pe lista de așteptare.
+					<p id="successMessage" class="text-emerald-400 font-semibold mt-4 hidden flex items-center justify-center gap-2">
+						<span>✓</span> <span>Mulțumim! Te-am adăugat pe lista de așteptare.</span>
 					</p>
 				</div>
 
-				<!-- Benefits Grid -->
-				<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-					<!-- Card 1: AI Local -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 group">
-						<div class="text-5xl mb-4">🧠</div>
-						<h3 class="text-xl font-bold mb-3 text-emerald-400 group-hover:text-emerald-300 transition-colors">
-							AI Local (OpenClaw)
-						</h3>
-						<p class="text-gray-400 leading-relaxed">
-							Agentul tău care învață despre tine fără să plece de acasă. Inteligență artificială care respectă intimitatea.
-						</p>
+				<!-- Trust badges -->
+				<div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
+					<div class="flex items-center gap-2">
+						<span class="text-emerald-400">✓</span> Open Source
 					</div>
-
-					<!-- Card 2: Foto Privat -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-blue-400/50 hover:bg-white/15 transition-all duration-300 group">
-						<div class="text-5xl mb-4">📸</div>
-						<h3 class="text-xl font-bold mb-3 text-blue-400 group-hover:text-blue-300 transition-colors">
-							Foto Privat (Immich)
-						</h3>
-						<p class="text-gray-400 leading-relaxed">
-							Alternativa ta privată la Google Photos. Toate amintirile tale rămân în siguranță pe hardware-ul tău.
-						</p>
+					<div class="flex items-center gap-2">
+						<span class="text-emerald-400">✓</span> Self-Hosted
 					</div>
-
-					<!-- Card 3: Seif Documente -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-cyan-400/50 hover:bg-white/15 transition-all duration-300 group">
-						<div class="text-5xl mb-4">📄</div>
-						<h3 class="text-xl font-bold mb-3 text-cyan-400 group-hover:text-cyan-300 transition-colors">
-							Seif Documente (Paperless)
-						</h3>
-						<p class="text-gray-400 leading-relaxed">
-							Organizare automată a facturilor prin AI local. Găsește orice document în secunde, fără cloud.
-						</p>
+					<div class="flex items-center gap-2">
+						<span class="text-emerald-400">✓</span> Privacy First
 					</div>
 				</div>
 			</div>
 		</section>
 
+		<!-- The 3 Pillars of Intelligence -->
+		<section class="px-6 py-20 md:py-28 bg-gradient-to-b from-transparent via-white/5 to-transparent">
+			<div class="max-w-7xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl md:text-5xl font-bold mb-4">
+						Cei 3 Piloni de
+						<span class="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+							Inteligență
+						</span>
+					</h2>
+					<p class="text-gray-400 text-lg max-w-2xl mx-auto">
+						Trei agenți AI care lucrează local pentru a-ți simplifica viața
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-8">
+					<!-- Pillar 1: Financial Coach -->
+					<div class="group backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/20">
+						<div class="text-6xl mb-6">💰</div>
+						<h3 class="text-2xl font-bold mb-3 text-emerald-400 group-hover:text-emerald-300 transition-colors">
+							AI Financial Coach
+						</h3>
+						<p class="text-gray-400 leading-relaxed mb-6">
+							Analiză financiară privată. Scanezi bonul, AI-ul îți spune unde pleacă banii și cum să economisești mai mult.
+						</p>
+						<ul class="space-y-2 text-sm text-gray-500">
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">→</span> Categorizare automată cheltuieli
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">→</span> Bugete personalizate
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-emerald-400">→</span> Recomandări de economii
+							</li>
+						</ul>
+					</div>
+
+					<!-- Pillar 2: Kitchen Manager -->
+					<div class="group backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-blue-400/50 hover:bg-white/15 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
+						<div class="text-6xl mb-6">🥗</div>
+						<h3 class="text-2xl font-bold mb-3 text-blue-400 group-hover:text-blue-300 transition-colors">
+							AI Kitchen Manager
+						</h3>
+						<p class="text-gray-400 leading-relaxed mb-6">
+							Managementul stocului alimentar. Primești notificări înainte ca puiul să expire și liste automate de cumpărături.
+						</p>
+						<ul class="space-y-2 text-sm text-gray-500">
+							<li class="flex items-center gap-2">
+								<span class="text-blue-400">→</span> Monitorizare expirare alimente
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-blue-400">→</span> Liste de cumpărături inteligente
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-blue-400">→</span> Sugestii de rețete
+							</li>
+						</ul>
+					</div>
+
+					<!-- Pillar 3: Health Coach -->
+					<div class="group backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-cyan-400/50 hover:bg-white/15 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20">
+						<div class="text-6xl mb-6">💪</div>
+						<h3 class="text-2xl font-bold mb-3 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+							AI Health Coach
+						</h3>
+						<p class="text-gray-400 leading-relaxed mb-6">
+							Monitorizare progres și recomandări de fitness personalizate, fără ca datele tale medicale să părăsească locuința.
+						</p>
+						<ul class="space-y-2 text-sm text-gray-500">
+							<li class="flex items-center gap-2">
+								<span class="text-cyan-400">→</span> Programe fitness personalizate
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-cyan-400">→</span> Monitorizare sănătate
+							</li>
+							<li class="flex items-center gap-2">
+								<span class="text-cyan-400">→</span> Recomandări nutriție
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Your Private Ecosystem -->
+		<section class="px-6 py-20 md:py-28">
+			<div class="max-w-7xl mx-auto">
+				<div class="text-center mb-16">
+					<h2 class="text-4xl md:text-5xl font-bold mb-4">
+						Ecosistemul tău
+						<span class="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+							Privat
+						</span>
+					</h2>
+					<p class="text-gray-400 text-lg max-w-2xl mx-auto">
+						Aplicații open-source care lucrează în armonie pe serverul tău
+					</p>
+				</div>
+
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+					<!-- Immich -->
+					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-xl p-6 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
+						<div class="text-4xl mb-3">🖼️</div>
+						<h4 class="font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Immich</h4>
+						<p class="text-sm text-gray-500">Alternativa privată la Google Photos</p>
+					</div>
+
+					<!-- Vaultwarden -->
+					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-xl p-6 hover:border-blue-400/50 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
+						<div class="text-4xl mb-3">🔐</div>
+						<h4 class="font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Vaultwarden</h4>
+						<p class="text-sm text-gray-500">Manager de parole self-hosted</p>
+					</div>
+
+					<!-- Paperless-ngx -->
+					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-xl p-6 hover:border-cyan-400/50 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
+						<div class="text-4xl mb-3">📄</div>
+						<h4 class="font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Paperless-ngx</h4>
+						<p class="text-sm text-gray-500">Seiful tău digital pentru documente</p>
+					</div>
+
+					<!-- Jellyfin -->
+					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-xl p-6 hover:border-purple-400/50 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
+						<div class="text-4xl mb-3">🎬</div>
+						<h4 class="font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Jellyfin</h4>
+						<p class="text-sm text-gray-500">Netflix-ul tău privat</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Why Now? - Economics Section -->
+		<section class="px-6 py-20 md:py-28 bg-gradient-to-r from-emerald-500/10 via-transparent to-blue-500/10 border-y border-white/10">
+			<div class="max-w-4xl mx-auto">
+				<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-12 text-center">
+					<h2 class="text-4xl md:text-5xl font-bold mb-6">
+						De ce
+						<span class="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+							acum?
+						</span>
+					</h2>
+
+					<div class="space-y-8">
+						<div>
+							<p class="text-gray-300 text-lg mb-4">
+								Sistemul se plătește singur în <span class="text-emerald-400 font-bold">6 luni</span>
+							</p>
+							<div class="flex flex-col md:flex-row justify-center gap-8 text-left">
+								<div class="flex-1">
+									<div class="text-3xl font-bold text-emerald-400 mb-2">~60€/lună</div>
+									<p class="text-gray-400">Eliminarea abonamentelor cloud</p>
+									<ul class="mt-3 space-y-1 text-sm text-gray-500">
+										<li>• Google Photos: 2€</li>
+										<li>• 1Password: 3€</li>
+										<li>• Netflix: 15€</li>
+										<li>• Alte servicii: 40€</li>
+									</ul>
+								</div>
+								<div class="flex-1">
+									<div class="text-3xl font-bold text-blue-400 mb-2">~30€/lună</div>
+									<p class="text-gray-400">Reducerea risipei alimentare</p>
+									<ul class="mt-3 space-y-1 text-sm text-gray-500">
+										<li>• Alimente expirate: 20€</li>
+										<li>• Cumpărături duble: 10€</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="pt-8 border-t border-white/10">
+							<p class="text-gray-400 mb-4">
+								Investiție inițială: <span class="text-white font-bold">~500€</span> (server modest)
+							</p>
+							<p class="text-emerald-400 font-semibold text-lg">
+								ROI: 8-9 luni | Economie anuală: ~1000€+
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="px-6 py-16 md:py-20">
+			<div class="max-w-3xl mx-auto text-center">
+				<h2 class="text-3xl md:text-4xl font-bold mb-6">
+					Gata să-ți iei viața înapoi?
+				</h2>
+				<p class="text-gray-400 text-lg mb-8">
+					Fii printre primii care vor accesa Sovereign Life OS. Locuri limitate pentru beta testers.
+				</p>
+				<button
+					onclick="document.getElementById('waitlistForm').scrollIntoView({ behavior: 'smooth' })"
+					class="px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/50 active:scale-95"
+				>
+					Rezervă Locul Tău
+				</button>
+			</div>
+		</section>
+
 		<!-- Footer -->
-		<footer class="backdrop-blur-md bg-white/5 border-t border-white/10 py-8">
-			<div class="max-w-6xl mx-auto px-6 text-center text-gray-500 text-sm">
-				<p>Sovereign Life OS © 2026 | Viitorul este local, viitorul este al tău.</p>
+		<footer class="backdrop-blur-md bg-white/5 border-t border-white/10 py-12 mt-auto">
+			<div class="max-w-7xl mx-auto px-6">
+				<div class="grid md:grid-cols-3 gap-8 mb-8">
+					<div>
+						<h4 class="font-bold text-white mb-4">Sovereign Life OS</h4>
+						<p class="text-gray-500 text-sm">
+							Transformă-ți casa într-un ecosistem inteligent și privat.
+						</p>
+					</div>
+					<div>
+						<h4 class="font-bold text-white mb-4">Linkuri</h4>
+						<ul class="space-y-2 text-sm text-gray-500 hover:text-gray-400 transition-colors">
+							<li><a href="#" class="hover:text-emerald-400">Documentație</a></li>
+							<li><a href="#" class="hover:text-emerald-400">GitHub</a></li>
+							<li><a href="#" class="hover:text-emerald-400">Contact</a></li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="font-bold text-white mb-4">Confidențialitate</h4>
+						<p class="text-gray-500 text-sm">
+							Datele tale nu sunt niciodată trimise în cloud. Totul rămâne local pe serverul tău.
+						</p>
+					</div>
+				</div>
+
+				<div class="border-t border-white/10 pt-8">
+					<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+						<p class="text-gray-500 text-sm">
+							© 2024 Sovereign Life OS. Toate drepturile rezervate.
+						</p>
+						<div class="flex gap-6 text-sm text-gray-500">
+							<a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a>
+							<a href="#" class="hover:text-emerald-400 transition-colors">Terms of Service</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-8 p-4 bg-white/5 border border-white/10 rounded-lg text-center">
+					<p class="text-xs text-gray-500">
+						<span class="text-emerald-400 font-semibold">Disclaimer:</span> Sovereign Life OS este în fază de dezvoltare. Datele tale sunt protejate prin criptare end-to-end și nu sunt niciodată transmise către servere externe.
+					</p>
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -111,6 +334,13 @@ import Layout from '../layouts/Layout.astro';
 			console.log('✓ Mulțumim!', email);
 			form.style.display = 'none';
 			successMessage?.classList.remove('hidden');
+			
+			// Reset after 5 seconds
+			setTimeout(() => {
+				form.style.display = 'flex';
+				successMessage?.classList.add('hidden');
+				(form.querySelector('input[type="email"]') as HTMLInputElement).value = '';
+			}, 5000);
 		});
 	</script>
 </Layout>
