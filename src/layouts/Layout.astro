@@ -13,7 +13,7 @@ const { title = 'Sovereign Life OS' } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-slate-950 text-slate-50 antialiased selection:bg-emerald-500/30">
-		<nav class="fixed top-6 right-6 z-[100] flex gap-2 bg-white/10 backdrop-blur-xl border border-white/20 p-1 rounded-full shadow-2xl">
+		<nav class="fixed bottom-6 right-6 z-[100] flex gap-2 bg-white/10 backdrop-blur-xl border border-white/20 p-1 rounded-full shadow-2xl">
 			<a href="/" class={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${Astro.currentLocale !== 'en' ? 'bg-emerald-500 text-white shadow-lg' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>RO</a>
 			<a href="/en/" class={`px-4 py-1.5 rounded-full text-xs font-bold transition-all ${Astro.currentLocale === 'en' ? 'bg-emerald-500 text-white shadow-lg' : 'text-white/70 hover:text-white hover:bg-white/5'}`}>EN</a>
 		</nav>
