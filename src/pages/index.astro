@@ -1,17 +1,116 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Sovereign Life OS - Coming Soon">
+	<div class="min-h-screen flex flex-col">
+		<!-- Navigation -->
+		<nav class="backdrop-blur-md bg-white/5 border-b border-white/10 sticky top-0 z-50">
+			<div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+				<div class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+					Sovereign Life OS
+				</div>
+				<div class="text-sm text-gray-400">Coming Soon</div>
+			</div>
+		</nav>
+
+		<!-- Hero Section -->
+		<section class="flex-1 flex items-center justify-center px-6 py-20">
+			<div class="max-w-4xl mx-auto text-center">
+				<!-- Main Title -->
+				<h1 class="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+					<span class="bg-gradient-to-r from-emerald-400 via-emerald-300 to-blue-500 bg-clip-text text-transparent">
+						Viitorul AI este local.
+					</span>
+					<br />
+					<span class="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
+						Al tău.
+					</span>
+				</h1>
+
+				<!-- Subtitle -->
+				<p class="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
+					Sovereign Life OS centralizează finanțele, amintirile și casa ta pe propriul hardware.
+					<span class="block mt-2 text-emerald-400 font-semibold">Zero Cloud. Zero Spionaj.</span>
+				</p>
+
+				<!-- Waitlist Form -->
+				<div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-8 max-w-md mx-auto mb-16 hover:bg-white/10 transition-all duration-300">
+					<form id="waitlistForm" class="flex flex-col gap-4">
+						<input
+							type="email"
+							placeholder="your@email.com"
+							required
+							class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all"
+						/>
+						<button
+							type="submit"
+							class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/50"
+						>
+							Rezervă Acces Prioritar
+						</button>
+					</form>
+					<p id="successMessage" class="text-emerald-400 font-semibold mt-4 hidden">
+						✓ Mulțumim! Te-am adăugat pe lista de așteptare.
+					</p>
+				</div>
+
+				<!-- Benefits Grid -->
+				<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+					<!-- Card 1: AI Local -->
+					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 group">
+						<div class="text-5xl mb-4">🧠</div>
+						<h3 class="text-xl font-bold mb-3 text-emerald-400 group-hover:text-emerald-300 transition-colors">
+							AI Local (OpenClaw)
+						</h3>
+						<p class="text-gray-400 leading-relaxed">
+							Agentul tău care învață despre tine fără să plece de acasă. Inteligență artificială care respectă intimitatea.
+						</p>
+					</div>
+
+					<!-- Card 2: Foto Privat -->
+					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-blue-400/50 hover:bg-white/15 transition-all duration-300 group">
+						<div class="text-5xl mb-4">📸</div>
+						<h3 class="text-xl font-bold mb-3 text-blue-400 group-hover:text-blue-300 transition-colors">
+							Foto Privat (Immich)
+						</h3>
+						<p class="text-gray-400 leading-relaxed">
+							Alternativa ta privată la Google Photos. Toate amintirile tale rămân în siguranță pe hardware-ul tău.
+						</p>
+					</div>
+
+					<!-- Card 3: Seif Documente -->
+					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-cyan-400/50 hover:bg-white/15 transition-all duration-300 group">
+						<div class="text-5xl mb-4">📄</div>
+						<h3 class="text-xl font-bold mb-3 text-cyan-400 group-hover:text-cyan-300 transition-colors">
+							Seif Documente (Paperless)
+						</h3>
+						<p class="text-gray-400 leading-relaxed">
+							Organizare automată a facturilor prin AI local. Găsește orice document în secunde, fără cloud.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="backdrop-blur-md bg-white/5 border-t border-white/10 py-8">
+			<div class="max-w-6xl mx-auto px-6 text-center text-gray-500 text-sm">
+				<p>Sovereign Life OS © 2024 | Viitorul este local, viitorul este al tău.</p>
+			</div>
+		</footer>
+	</div>
+
+	<script>
+		const form = document.getElementById('waitlistForm');
+		const successMessage = document.getElementById('successMessage');
+
+		form?.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const email = (form.querySelector('input[type="email"]') as HTMLInputElement)?.value;
+			console.log('✓ Mulțumim!', email);
+			form.style.display = 'none';
+			successMessage?.classList.remove('hidden');
+		});
+	</script>
+</Layout>
