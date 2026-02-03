@@ -1,42 +1,23 @@
 ---
 import '../styles/global.css';
-
-interface Props {
-	title?: string;
-}
-
-const { title = 'Sovereign Life OS' } = Astro.props;
 const lang = Astro.currentLocale || 'ro';
+const { title = 'Sovereign Life OS' } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang}>
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
-		<style>
-			html {
-				font-family: 'Inter', sans-serif;
-			}
-		</style>
 	</head>
-	<body class="bg-slate-950 text-white">
-		<!-- Language Selector -->
-		<div class="fixed top-4 right-4 z-50 flex items-center gap-4">
-			<a href="/" class="text-white/70 hover:text-white font-medium">
-				RO
-			</a>
-			<a href="/en/" class="text-white/70 hover:text-white font-medium">
-				EN
-			</a>
-		</div>
+	<body class="bg-slate-950 text-slate-50 antialiased selection:bg-emerald-500/30">
+		<nav class="fixed top-6 right-6 z-50 flex gap-4 bg-white/5 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-sm">
+			<a href="/" class={lang === 'ro' ? 'text-emerald-400 font-bold' : 'text-white/60 hover:text-white'}>RO</a>
+			<a href="/en/" class={lang === 'en' ? 'text-emerald-400 font-bold' : 'text-white/60 hover:text-white'}>EN</a>
+		</nav>
+
 		<slot />
 	</body>
 </html>
