@@ -42,12 +42,12 @@ import Layout from '../layouts/Layout.astro';
 				<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 max-w-md mx-auto mb-16 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 shadow-2xl shadow-emerald-500/10">
 					<form 
 						id="waitlistForm" 
-						name="waitlist-sovereign" 
+						name="waitlist-majordom" 
 						method="POST" 
 						data-netlify="true"
 						class="flex flex-col gap-4"
 						>
-						<input type="hidden" name="form-name" value="waitlist-sovereign" />
+						<input type="hidden" name="form-name" value="waitlist-majordom" />
 						
 						<div class="relative">
 							<input
@@ -439,28 +439,5 @@ import Layout from '../layouts/Layout.astro';
 		</footer>
 	</div>
 
-	<script>
-		const form = document.getElementById('waitlistForm') as HTMLFormElement;
-		const successMessage = document.getElementById('successMessage');
 
-		form?.addEventListener('submit', async (e) => {
-			e.preventDefault();
-			
-			const formData = new FormData(form);
-			
-			try {
-			await fetch("/", {
-				method: "POST",
-				headers: { "Content-Type": "application/x-www-form-urlencoded" },
-				body: new URLSearchParams(formData as any).toString(),
-			});
-			
-			// Succes! Ascundem formularul și arătăm mesajul
-			form.style.display = 'none';
-			successMessage?.classList.remove('hidden');
-			} catch (error) {
-			alert('A apărut o eroare. Încearcă din nou.');
-			}
-		});
-	</script>
 </Layout>
