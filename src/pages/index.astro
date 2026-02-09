@@ -40,7 +40,7 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- Waitlist Form - Prominent -->
 				<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 max-w-md mx-auto mb-16 shadow-2xl shadow-emerald-500/10">
-					<form id="waitlistForm" name="waitlist-majordom" method="POST" data-netlify="true" class="flex flex-col gap-4">
+					<form id="waitlistForm" name="waitlist-majordom" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="flex flex-col gap-4">
 						<input type="hidden" name="form-name" value="waitlist-majordom"/>
 						
 						<div class="relative">
@@ -421,5 +421,8 @@ import Layout from '../layouts/Layout.astro';
 		</footer>
 	</div>
 
+	<p class="hidden">
+		<label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+	</p>
 
 </Layout>
