@@ -42,7 +42,9 @@ import Layout from '../layouts/Layout.astro';
 				<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 max-w-md mx-auto mb-16 shadow-2xl shadow-emerald-500/10">
 					<form id="waitlistForm" name="waitlist-majordom" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="flex flex-col gap-4">
 						<input type="hidden" name="form-name" value="waitlist-majordom"/>
-						
+						<p class="hidden">
+							<label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+						</p>
 						<div class="relative">
 							<input type="email"	name="email" placeholder="your@email.com" required class="w-full px-4 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30 transition-all"/>
 						</div>
@@ -421,8 +423,40 @@ import Layout from '../layouts/Layout.astro';
 		</footer>
 	</div>
 
-	<p class="hidden">
-		<label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-	</p>
+	<script>
+	// Selectăm elementele
+	const form = document.getElementById('waitlistForm');
+	const successMessage = document.getElementById('successMessage');
+
+	if (form && successMessage) {
+		form.addEventListener('submit', async (e) => {
+		e.preventDefault(); // Oprim refresh-ul paginii
+
+		const formData = new FormData(form);
+		
+		try {
+			// Trimitem datele către Netlify
+			const response = await fetch("/", {
+			method: "POST",
+			headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			body: new URLSearchParams(formData).toString(),
+			});
+
+			if (response.ok) {
+			// Succes: Ascundem formularul și arătăm mesajul
+			form.style.display = 'none';
+			successMessage.classList.remove('hidden');
+			} else {
+			// Dacă Netlify dă o eroare, trimitem clasic ca backup
+			form.submit();
+			}
+		} catch (error) {
+			console.error("Eroare la trimitere:", error);
+			// Fallback în caz de eroare de rețea
+			form.submit();
+		}
+		});
+	}
+	</script>
 
 </Layout>
