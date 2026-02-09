@@ -439,5 +439,40 @@ import Layout from '../layouts/Layout.astro';
 		</footer>
 	</div>
 
+	<script>
+		// 1. Selectăm formularul folosind ID-ul configurat în HTML
+		const form = document.getElementById('waitlistForm') as HTMLFormElement;
+		const successMessage = document.getElementById('successMessage');
+
+		if (form) {
+			form.addEventListener('submit', async (e) => {
+				// 2. Oprim comportamentul standard (reîncărcarea paginii)
+				e.preventDefault();
+
+				// 3. Pregătim datele pentru Netlify
+				const formData = new FormData(form);
+				
+				try {
+					// 4. Trimitem datele prin fetch
+					const response = await fetch("/", {
+						method: "POST",
+						headers: { "Content-Type": "application/x-www-form-urlencoded" },
+						body: new URLSearchParams(formData as any).toString(),
+					});
+
+					if (response.ok) {
+						// 5. Dacă a reușit, ascundem formularul și arătăm mesajul de succes
+						form.style.display = 'none';
+						successMessage?.classList.remove('hidden');
+					} else {
+						throw new Error('Eroare la server');
+					}
+				} catch (error) {
+					console.error('Eroare:', error);
+					alert('A apărut o problemă. Te rugăm să încerci din nou.');
+				}
+			});
+		}
+	</script>
 
 </Layout>
