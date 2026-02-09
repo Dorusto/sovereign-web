@@ -439,46 +439,5 @@ import Layout from '../layouts/Layout.astro';
 		</footer>
 	</div>
 
-	<script>
-		const form = document.getElementById('waitlistForm') as HTMLFormElement;
-		const successMessage = document.getElementById('successMessage');
-
-		if (form) {
-			form.addEventListener('submit', async (e) => {
-			e.preventDefault();
-
-			const formData = new FormData(form);
-			
-			// IMPORTANT: Netlify are nevoie de form-name în corpul cererii POST
-			// Dacă input-ul hidden e în HTML, FormData îl va lua automat, 
-			// dar e bine să fim siguri:
-			if (!formData.get('form-name')) {
-				formData.append('form-name', 'waitlist-majordom');
-			}
-
-			try {
-				const response = await fetch("/", {
-				method: "POST",
-				headers: { "Content-Type": "application/x-www-form-urlencoded" },
-				// Convertim FormData în formatul pe care îl înțelege Netlify
-				body: new URLSearchParams(formData as any).toString(),
-				});
-
-				if (response.ok) {
-				form.style.display = 'none';
-				successMessage?.classList.remove('hidden');
-				console.log("Succes Netlify!");
-				} else {
-				console.error("Eroare la server Netlify:", response.status);
-				// Dacă fetch-ul eșuează, trimitem formularul normal ca fallback
-				form.submit(); 
-				}
-			} catch (error) {
-				console.error('Eroare rețea:', error);
-				alert('A apărut o eroare. Te rugăm să încerci din nou.');
-			}
-			});
-		}
-	</script>
 
 </Layout>
