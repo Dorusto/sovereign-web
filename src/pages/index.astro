@@ -423,40 +423,4 @@ import Layout from '../layouts/Layout.astro';
 		</footer>
 	</div>
 
-	<script>
-	// Selectăm elementele
-	const form = document.getElementById('waitlistForm');
-	const successMessage = document.getElementById('successMessage');
-
-	if (form && successMessage) {
-		form.addEventListener('submit', async (e) => {
-		e.preventDefault(); // Oprim refresh-ul paginii
-
-		const formData = new FormData(form);
-		
-		try {
-			// Trimitem datele către Netlify
-			const response = await fetch("/", {
-			method: "POST",
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: new URLSearchParams(formData).toString(),
-			});
-
-			if (response.ok) {
-			// Succes: Ascundem formularul și arătăm mesajul
-			form.style.display = 'none';
-			successMessage.classList.remove('hidden');
-			} else {
-			// Dacă Netlify dă o eroare, trimitem clasic ca backup
-			form.submit();
-			}
-		} catch (error) {
-			console.error("Eroare la trimitere:", error);
-			// Fallback în caz de eroare de rețea
-			form.submit();
-		}
-		});
-	}
-	</script>
-
 </Layout>
