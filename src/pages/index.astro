@@ -440,37 +440,43 @@ import Layout from '../layouts/Layout.astro';
 	</div>
 
 	<script>
-		// 1. Selectăm formularul folosind ID-ul configurat în HTML
 		const form = document.getElementById('waitlistForm') as HTMLFormElement;
 		const successMessage = document.getElementById('successMessage');
 
 		if (form) {
 			form.addEventListener('submit', async (e) => {
-				// 2. Oprim comportamentul standard (reîncărcarea paginii)
-				e.preventDefault();
+			e.preventDefault();
 
-				// 3. Pregătim datele pentru Netlify
-				const formData = new FormData(form);
-				
-				try {
-					// 4. Trimitem datele prin fetch
-					const response = await fetch("/", {
-						method: "POST",
-						headers: { "Content-Type": "application/x-www-form-urlencoded" },
-						body: new URLSearchParams(formData as any).toString(),
-					});
+			const formData = new FormData(form);
+			
+			// IMPORTANT: Netlify are nevoie de form-name în corpul cererii POST
+			// Dacă input-ul hidden e în HTML, FormData îl va lua automat, 
+			// dar e bine să fim siguri:
+			if (!formData.get('form-name')) {
+				formData.append('form-name', 'waitlist-majordom');
+			}
 
-					if (response.ok) {
-						// 5. Dacă a reușit, ascundem formularul și arătăm mesajul de succes
-						form.style.display = 'none';
-						successMessage?.classList.remove('hidden');
-					} else {
-						throw new Error('Eroare la server');
-					}
-				} catch (error) {
-					console.error('Eroare:', error);
-					alert('A apărut o problemă. Te rugăm să încerci din nou.');
+			try {
+				const response = await fetch("/", {
+				method: "POST",
+				headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				// Convertim FormData în formatul pe care îl înțelege Netlify
+				body: new URLSearchParams(formData as any).toString(),
+				});
+
+				if (response.ok) {
+				form.style.display = 'none';
+				successMessage?.classList.remove('hidden');
+				console.log("Succes Netlify!");
+				} else {
+				console.error("Eroare la server Netlify:", response.status);
+				// Dacă fetch-ul eșuează, trimitem formularul normal ca fallback
+				form.submit(); 
 				}
+			} catch (error) {
+				console.error('Eroare rețea:', error);
+				alert('A apărut o eroare. Te rugăm să încerci din nou.');
+			}
 			});
 		}
 	</script>
