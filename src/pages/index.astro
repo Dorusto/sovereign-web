@@ -40,7 +40,7 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- Waitlist Form - Prominent -->
 				<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 max-w-md mx-auto mb-16 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 shadow-2xl shadow-emerald-500/10">
-					<form id="waitlistForm" method="POST" action="https://formspree.io/f/mojlgaya" class="flex flex-col gap-4">
+					<form id="waitlistForm" method="POST" action="https://api.beehiiv.com/v2/publications/1a2bccd7-4e2b-4c4f-9b51-01c46afdec9d/subscribers" class="flex flex-col gap-4">
 						<div class="relative">
 							<input
 								type="email"
@@ -449,5 +449,38 @@ import Layout from '../layouts/Layout.astro';
 				(form.querySelector('input[type="email"]') as HTMLInputElement).value = '';
 			}, 5000);
 		});
+	</script>
+
+	<script>
+	document.getElementById('waitlistForm').addEventListener('submit', async (e) => {
+		e.preventDefault();
+		
+		const form = e.target;
+		const formData = new FormData(form);
+		
+		try {
+		const response = await fetch(form.action, {
+			method: 'POST',
+			headers: {
+			'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+			email: formData.get('email')
+			})
+		});
+		
+		if (response.ok) {
+			// Ascunde formularul
+			form.style.display = 'none';
+			// Arată mesajul de succes
+			document.getElementById('successMessage').classList.remove('hidden');
+		} else {
+			alert('A apărut o eroare. Te rugăm să încerci din nou.');
+		}
+		} catch (error) {
+		console.error('Error:', error);
+		alert('A apărut o eroare. Te rugăm să încerci din nou.');
+		}
+	});
 	</script>
 </Layout>
