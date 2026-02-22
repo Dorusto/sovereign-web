@@ -3,13 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import HeroSection from '../components/HeroSection.astro';
 import WaitlistForm from '../components/WaitlistForm.astro';
-import SavingsCalculator from '../components/SavingsCalculator.astro';
 import Pillars from '../components/Pillars.astro';
 import Nextcloud from '../components/Nextcloud.astro';
-import EcosystemGrid from '../components/EcosystemGrid.astro';
 import FAQItem from '../components/FAQItem.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
+import HomeAssistant from '../components/HomeAssistant.astro';
+import MediaVault from '../components/MediaVault.astro';
+import HealthAI from '../components/HealthAI.astro';
+import FinanceAI from '../components/FinanceAI.astro';
+import MasterCategories from '../components/MasterCategories.astro';
 
 // Putem defini datele în variabile aici sus pentru a păstra HTML-ul curat jos
 const pillarData = [
@@ -30,13 +33,61 @@ const pillarData = [
         <WaitlistForm slot="form-area" />
     </HeroSection>
 
-    <SavingsCalculator />
+    <MasterCategories />
 
-    <Pillars
-        title='Cei 3 Piloni de <span class="text-emerald-400">Inteligență</span>'
-        subtitle="Trei agenți AI care lucrează local pentru a-ți simplifica viața"
-        items={pillarData}
-    />
+    <FinanceAI
+    title="Sovereign Finance:"
+    highlight="Claritate & Prosperitate"
+    description="Primul și cel mai important pilon. Un creier financiar care îți scanează facturile, îți optimizează datoriile și îți planifică viitorul, fără ca vreo bancă sau corporație să știe ce avere ai."
+    features={[
+        "Scanare automată bonuri/facturi și extragere date cu AI local",
+        "Monitorizare buget în timp real (Cashflow vs. Cheltuieli)",
+        "Strategii personalizate de eliminare a datoriilor (Snowball/Avalanche)",
+        "Planificator de obiective: 'Îmi permit această excursie?'",
+        "Analiză de portofoliu și simulări de investiții",
+        "Arhivă digitală legală: Facturi organizate și ușor de găsit"
+    ]}
+>
+    <div slot="visual-element" class="flex-1 hidden md:block">
+        <div class="backdrop-blur-xl bg-gradient-to-br from-yellow-600/20 to-emerald-600/20 border border-yellow-500/30 rounded-xl p-8 text-center">
+            <p class="text-white font-bold mb-4 text-lg">Înlocuiește</p>
+            <div class="space-y-3 mb-6">
+                <p class="text-gray-300 line-through opacity-50">YNAB (You Need A Budget)</p>
+                <p class="text-gray-300 line-through opacity-50">Receipt Bank / Expensify</p>
+                <p class="text-gray-300 line-through opacity-50">Spreadsheet-uri complicate</p>
+                <p class="text-gray-300 line-through opacity-50">Comisioane de administrare</p>
+            </div>
+            <div class="pt-4 border-t border-white/10">
+                <p class="text-yellow-400 font-bold text-xl">Suveranitate Financiară</p>
+            </div>
+        </div>
+    </div>
+</FinanceAI>
+
+<HomeAssistant
+    title="Home Assistant:"
+    highlight="Creierul Casei Tale"
+    description="Control total peste dispozitivele tale inteligente, fără să trimiți date la Amazon, Google sau Apple. Automatizări care funcționează chiar și fără internet."
+    features={[
+        "Control local pentru lumini, senzori și prize",
+        "Automatizări complexe bazate pe prezența ta",
+        "Interfață personalizabilă pe tabletă sau telefon",
+        "Integrare cu peste 2000 de branduri de hardware"
+    ]}
+>
+    <div slot="visual-element" class="flex-1 hidden md:block">
+        <div class="backdrop-blur-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-white/20 rounded-xl p-8 text-center">
+            <p class="text-white font-bold mb-4 text-lg">Înlocuiește</p>
+            <div class="space-y-3 mb-6">
+                <p class="text-gray-300 line-through opacity-50">Amazon Alexa</p>
+                <p class="text-gray-300 line-through opacity-50">Google Home</p>
+                <p class="text-gray-300 line-through opacity-50">Apple HomeKit (Cloud)</p>
+                <p class="text-gray-300 line-through opacity-50">Samsung SmartThings</p>
+            </div>
+            <p class="text-orange-400 font-bold text-xl">Privacy 100% Local</p>
+        </div>
+    </div>
+</HomeAssistant>
 
     <Nextcloud
         title="Nextcloud:"
@@ -62,7 +113,96 @@ const pillarData = [
     </div>
     </Nextcloud>
 
-    <EcosystemGrid />
+<MediaVault
+    title="Digital Vault:"
+    highlight="Amintiri și Media"
+    description="Transformă-ți colecția de filme, muzică și fotografii într-un serviciu de streaming personal. Calitate 4K originală, fără compresie și fără taxe lunare."
+    features={[
+        "Streaming 4K fără buffering în rețeaua locală",
+        "Backup automat pentru pozele de pe telefon (Immich)",
+        "Recunoaștere facială și organizare AI locală",
+        "Acces la biblioteca de muzică și audiobook-uri oriunde"
+    ]}
+>
+    <div slot="visual-element" class="flex-1 hidden md:block">
+        <div class="backdrop-blur-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-white/20 rounded-xl p-8 text-center">
+            <p class="text-white font-bold mb-4 text-lg">Înlocuiește</p>
+            <div class="space-y-3 mb-6">
+                <p class="text-gray-300 line-through opacity-50">Netflix & Disney+</p>
+                <p class="text-gray-300 line-through opacity-50">Google Photos (Abonament)</p>
+                <p class="text-gray-300 line-through opacity-50">Spotify & Audible</p>
+                <p class="text-gray-300 line-through opacity-50">iCloud Storage</p>
+            </div>
+            <p class="text-purple-400 font-bold text-xl">Propriul tău Cinema</p>
+        </div>
+    </div>
+</MediaVault>
+
+<HealthAI
+    title="Sovereign:"
+    highlight="Health & Vitality"
+    description="Mai mult decât o bază de date, este antrenorul tău personal care nu te judecă și nu îți vinde datele. Un sistem integrat care înțelege legătura dintre cum te miști și ce mănânci."
+    features={[
+        "Antrenor vocal de alergare: planuri bazate pe ritmul tău cardiac",
+        "Programe de fitness (vârstă/greutate/sex) generate local",
+        "Corelare automată: antrenament vs. nutrienții consumați",
+        "Analiza calității somnului și recomandări de recuperare",
+        "Privacy 100%: Datele tale biometrice rămân în casa ta",
+        "Fără abonamente lunare pentru 'funcții premium'"
+    ]}
+>
+    <div slot="visual-element" class="flex-1 hidden md:block">
+        <div class="backdrop-blur-xl bg-gradient-to-br from-emerald-500/20 to-blue-500/20 border border-white/20 rounded-xl p-8 text-center">
+            <p class="text-white font-bold mb-4 text-lg">Înlocuiește</p>
+            <div class="space-y-3 mb-6 text-sm">
+                <p class="text-gray-300 line-through opacity-50">Strava & Runkeeper Premium</p>
+                <p class="text-gray-300 line-through opacity-50">Freeletics & MyFitnessPal</p>
+                <p class="text-gray-300 line-through opacity-50">Whoop / Oura Subscription</p>
+                <p class="text-gray-300 line-through opacity-50">Apple Fitness+</p>
+            </div>
+            <div class="pt-4 border-t border-white/10">
+                <p class="text-blue-400 font-bold text-lg">Performanță fără Supraveghere</p>
+            </div>
+        </div>
+    </div>
+</HealthAI>
+
+<section class="py-24 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-red-500/10 blur-[120px] rounded-full -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Marea <span class="text-red-500">Curățenie</span></h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Sovereign Life OS nu este o altă taxă. Este unealta care le elimină pe toate celelalte.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {[
+                "Netflix", "Spotify", "iCloud", "Google One",
+                "YNAB", "Strava", "Dropbox", "Evernote",
+                "Zapier", "Notion", "LastPass", "MyFitnessPal",
+                "Amazon Alexa", "Life360", "Microsoft 365", "Audible",
+                "Disney+", "Zoom", "Slack", "WeTransfer Pro", // WeTransfer e foarte cunoscut
+                "OneDrive", "Apple Music", "HBO Max", "Bitwarden Cloud"
+            ].map((service) => (
+                <div class="group relative bg-white/5 border border-white/10 p-4 rounded-xl flex items-center justify-center transition-all duration-500 hover:bg-red-500/10 hover:border-red-500/30">
+                    <span class="text-gray-500 font-medium group-hover:text-red-400 transition-colors">
+                        {service}
+                    </span>
+                    <div class="absolute w-0 h-[2px] bg-red-500 left-0 top-1/2 -translate-y-1/2 transition-all duration-500 group-hover:w-full opacity-0 group-hover:opacity-100 shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
+                </div>
+            ))}
+        </div>
+
+        <div class="mt-16 p-8 bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 rounded-r-2xl">
+            <p class="text-white text-xl md:text-2xl font-light italic">
+                "Am calculat că un utilizator mediu economisește între <span class="text-red-400 font-bold">1.200€ și 2.500€ pe an</span> prin simpla consolidare a acestor servicii în propriul sistem."
+            </p>
+        </div>
+    </div>
+</section>
 
     <section class="px-6 py-20">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">

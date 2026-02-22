@@ -1,0 +1,33 @@
+---
+// src/components/FinanceAI.astro
+interface Props {
+  title: string;
+  highlight: string;
+  description: string;
+  features: string[];
+}
+
+const { title, highlight, description, features } = Astro.props;
+---
+<section class="px-6 py-20 bg-gradient-to-b from-transparent via-emerald-900/10 to-transparent border-b border-white/10">
+    <div class="max-w-5xl mx-auto">
+        <div class="backdrop-blur-xl bg-white/5 border border-white/20 rounded-2xl p-12 flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1">
+                <div class="text-6xl mb-6">💰</div>
+                <h2 class="text-4xl font-bold mb-4">
+                    {title} <span class="bg-gradient-to-r from-yellow-400 to-emerald-500 bg-clip-text text-transparent">{highlight}</span>
+                </h2>
+                <p class="text-gray-300 text-lg mb-6">{description}</p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400">
+                    {features.map(f => (
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 text-xl">✓</span> {f}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <slot name="visual-element" />
+        </div>
+    </div>
+</section>
