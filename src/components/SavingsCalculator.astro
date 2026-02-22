@@ -1,0 +1,26 @@
+---
+// src/components/SavingsCalculator.astro
+import pricingData from '../data/ecosystem.json';
+import PricingCard from './PricingCard.astro';
+
+const totalSavings = pricingData.reduce((acc, item) => acc + item.cloudPrice, 0);
+---
+<section class="px-6 py-20 bg-gradient-to-b from-transparent via-white/5 to-transparent">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Ecosistemul tău <span class="text-emerald-400">Fără Chirii</span></h2>
+            <p class="text-gray-400 text-lg">Compară costurile: cloud vs. local</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            {pricingData.map((item) => <PricingCard item={item} />)}
+        </div>
+
+        <div class="backdrop-blur-xl bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-400/50 rounded-2xl p-8 text-center">
+            <p class="text-gray-300 text-lg mb-2">Total Economisit Anual</p>
+            <p class="text-5xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+                Peste €{totalSavings}/an
+            </p>
+        </div>
+    </div>
+</section>

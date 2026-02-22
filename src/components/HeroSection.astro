@@ -1,0 +1,35 @@
+---
+// src/components/HeroSection.astro
+interface Props {
+  titlePart1: string;
+  titlePart2: string;
+  subtitle: string;
+}
+
+const { titlePart1, titlePart2, subtitle } = Astro.props;
+import TrustBadges from './TrustBadges.astro';
+---
+<section class="relative px-6 py-24 md:py-32 overflow-hidden">
+  <div class="absolute inset-0 -z-10">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-5xl mx-auto text-center">
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+      <span class="bg-gradient-to-r from-emerald-300 via-emerald-400 to-blue-500 bg-clip-text text-transparent">
+        {titlePart1}
+      </span>
+      <br />
+      <span class="text-white">{titlePart2}</span>
+    </h1>
+
+    <p class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
+      {subtitle}
+    </p>
+
+    <slot name="form-area" />
+
+    <TrustBadges />
+  </div>
+</section>

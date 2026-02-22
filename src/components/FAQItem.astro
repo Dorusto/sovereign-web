@@ -1,0 +1,7 @@
+---
+const { question, answer, colorClass } = Astro.props;
+---
+<div class={`backdrop-blur-xl bg-white/5 border border-white/20 rounded-2xl p-8 hover:border-${colorClass}-400/50 transition-all`}>
+    <h3 class={`text-xl font-bold text-${colorClass}-400 mb-3`}>{question}</h3>
+    <p class="text-gray-400 leading-relaxed">{answer}</p>
+</div>

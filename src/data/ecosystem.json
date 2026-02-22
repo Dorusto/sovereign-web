@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Cloud Storage",
+    "cloudPrice": 120,
+    "cloudService": "Google One / iCloud (2TB)",
+    "localService": "Nextcloud & Immich",
+    "icon": "☁️",
+    "color": "red"
+  },
+  {
+    "name": "Password Manager",
+    "cloudPrice": 36,
+    "cloudService": "1Password / LastPass",
+    "localService": "Vaultwarden",
+    "icon": "🔐",
+    "color": "red"
+  },
+  {
+    "name": "Health & Fitness",
+    "cloudPrice": 150,
+    "cloudService": "Fitness & Mental Health Apps",
+    "localService": "AI Health Coach",
+    "icon": "💪",
+    "color": "red"
+  }
+]

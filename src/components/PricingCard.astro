@@ -1,0 +1,19 @@
+---
+// src/components/PricingCard.astro
+const { item } = Astro.props;
+---
+<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-red-400/50 hover:bg-white/15 transition-all duration-300">
+    <div class="flex items-center justify-between mb-4">
+        <div>
+            <p class="text-sm text-gray-400 mb-2">{item.name}</p>
+            <p class="text-2xl font-bold text-red-400">❌ €{item.cloudPrice}/an</p>
+        </div>
+        <div class="text-4xl">{item.icon}</div>
+    </div>
+    <p class="text-gray-500 text-sm mb-4">{item.cloudService}</p>
+    <div class="border-t border-white/10 pt-4">
+        <p class="text-sm text-gray-400 mb-2">Soluția ta:</p>
+        <p class="text-2xl font-bold text-emerald-400">✅ €0</p>
+        <p class="text-gray-500 text-sm">{item.localService}</p>
+    </div>
+</div>
