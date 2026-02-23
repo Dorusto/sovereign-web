@@ -3,16 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import HeroSection from '../components/HeroSection.astro';
 import WaitlistForm from '../components/WaitlistForm.astro';
-import Pillars from '../components/Pillars.astro';
+import MasterCategories from '../components/MasterCategories.astro';
+import FinanceAI from '../components/FinanceAI.astro';
+import HomeAssistant from '../components/HomeAssistant.astro';
 import Nextcloud from '../components/Nextcloud.astro';
+import MediaVault from '../components/MediaVault.astro';
+import HealthAI from '../components/HealthAI.astro';
+import FAQ from '../components/FAQ.astro'; // IMPORTI DOAR FAQ, NU FAQITEM
 import FAQItem from '../components/FAQItem.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
-import HomeAssistant from '../components/HomeAssistant.astro';
-import MediaVault from '../components/MediaVault.astro';
-import HealthAI from '../components/HealthAI.astro';
-import FinanceAI from '../components/FinanceAI.astro';
-import MasterCategories from '../components/MasterCategories.astro';
 
 // Putem defini datele în variabile aici sus pentru a păstra HTML-ul curat jos
 const pillarData = [
@@ -33,7 +33,77 @@ const pillarData = [
         <WaitlistForm slot="form-area" />
     </HeroSection>
 
-    <MasterCategories />
+<MasterCategories>
+  <div slot="header">
+    <h2 class="text-4xl md:text-6xl font-extrabold mb-6 italic tracking-tight text-white">
+      Sovereign <span class="text-emerald-400">Life OS</span>
+    </h2>
+    <p class="text-xl text-gray-400 max-w-3xl mx-auto italic">
+      "O arhitectură completă pentru omul modern care refuză să mai fie un produs."
+    </p>
+  </div>
+
+  <div class="relative group p-8 rounded-3xl border border-blue-500/30 bg-gradient-to-br from-blue-600/20 to-cyan-500/10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 flex flex-col">
+    <div class="text-5xl mb-6">🛡️</div>
+    <h3 class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase mb-2">Suveranitatea Datelor</h3>
+    <h4 class="text-2xl font-bold text-white mb-4">Pilonul Digital: FOUNDATION</h4>
+    <p class="text-gray-300 mb-6 leading-relaxed">Fundația pe care îți reconstruiești libertatea. Înlocuiește infrastructura corporațiilor cu propriul tău buncăr digital.</p>
+    <div class="space-y-3 mb-8">
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Cloud Privat (Documente/Foto)</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Seiful Identității (Parole/2FA)</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Streaming Media 4K Privat</div>
+    </div>
+    <div class="pt-6 border-t border-white/10 mt-auto">
+      <p class="text-xs text-gray-500 italic">Înlocuiește: Google One, iCloud, Dropbox, OneDrive, LastPass.</p>
+    </div>
+  </div>
+
+  <div class="relative group p-8 rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-600/20 to-lime-500/10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 flex flex-col">
+    <div class="text-5xl mb-6">🧠</div>
+    <h3 class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase mb-2">Inteligență & Wellness</h3>
+    <h4 class="text-2xl font-bold text-white mb-4">Pilonul Vital: MENTOR</h4>
+    <p class="text-gray-300 mb-6 leading-relaxed">Evoluția ta fizică și mentală sub îndrumarea unui AI care îți cunoaște biometria, dar îți respectă intimitatea.</p>
+    <div class="space-y-3 mb-8">
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>AI Health & Fitness Coach</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Nutriție & Inventar Frigider</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Analiză Biometrică Locală</div>
+    </div>
+    <div class="pt-6 border-t border-white/10 mt-auto">
+      <p class="text-xs text-gray-500 italic">Înlocuiește: MyFitnessPal, Strava, Coach-uri AI, Jurnale Medicale.</p>
+    </div>
+  </div>
+
+  <div class="relative group p-8 rounded-3xl border border-yellow-500/30 bg-gradient-to-br from-yellow-600/20 to-orange-500/10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 flex flex-col">
+    <div class="text-5xl mb-6">🏛️</div>
+    <h3 class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase mb-2">Prosperitate & Autonomie</h3>
+    <h4 class="text-2xl font-bold text-white mb-4">Pilonul Strategic: ARCHITECT</h4>
+    <p class="text-gray-300 mb-6 leading-relaxed">Creierul care optimizează resursele casei și ale portofoliului tău. Singurul pilon care produce bani și timp.</p>
+    <div class="space-y-3 mb-8">
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Sovereign Finance (Buget/Investiții)</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Controlul Casei & Energiei</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Automatizarea Cumpărăturilor</div>
+    </div>
+    <div class="pt-6 border-t border-white/10 mt-auto">
+      <p class="text-xs text-gray-500 italic">Înlocuiește: YNAB, Alexa, Google Home, Consultanți Financiari.</p>
+    </div>
+  </div>
+
+  <div slot="footer-stats">
+    <h3 class="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-4">Impactul Suveranității asupra Capitalului</h3>
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="text-left">
+            <p class="text-3xl md:text-4xl font-bold text-white mb-2">Recuperezi <span class="text-emerald-400">€1.500+</span> / an</p>
+            <p class="text-gray-400 text-sm md:text-base">Prin consolidarea celor 3 piloni și oprirea scurgerilor de capital către 15+ abonamente inutile.</p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10 relative overflow-hidden group">
+            <p class="text-xs text-gray-500 uppercase mb-1 relative z-10">Proiecție pe 5 ani</p>
+            <p class="text-5xl font-black text-white italic relative z-10">€7.500</p>
+            <p class="text-[10px] text-emerald-500/70 mt-2 font-medium relative z-10 uppercase tracking-tighter">Bani care rămân în buzunarul tău</p>
+            <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-emerald-500/10 blur-2xl rounded-full"></div>
+        </div>
+    </div>
+  </div>
+</MasterCategories>
 
     <FinanceAI
     title="Sovereign Finance:"
@@ -204,13 +274,101 @@ const pillarData = [
     </div>
 </section>
 
-    <section class="px-6 py-20">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
-            <FAQItem colorClass="emerald" question="Unde sunt datele?" answer="Pe hard-disk-ul din sufrageria ta. Punct." />
-            <FAQItem colorClass="blue" question="Costă mult?" answer="Sistemul se plătește singur în 2 ani prin eliminarea abonamentelor." />
+<FAQ>
+        <div slot="title">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Întrebări <span class="text-emerald-400">Frecvente</span></h2>
+            <p class="text-gray-400 italic">Tot ce trebuie să știi despre noua ta suveranitate digitală.</p>
         </div>
-    </section>
 
-    <CTA />
-    <Footer />
+        <FAQItem
+            colorClass="emerald"
+            question="Unde sunt stocate fizic datele mele?"
+            answer="Pe un server (Mini PC sau NAS) situat în locuința ta. Nu există 'cloud' intermediar, servere în alte țări sau acces neautorizat. Tu deții hardware-ul, tu deții datele."
+        />
+
+        <FAQItem
+            colorClass="blue"
+            question="Ce se întâmplă dacă pică internetul?"
+            answer="Sistemul funcționează perfect local. Poți controla casa, viziona filmele din librărie sau accesa documentele. Suveranitatea înseamnă că nu depinzi de o conexiune externă pentru funcțiile de bază."
+        />
+
+        <FAQItem
+            colorClass="red"
+            question="Dacă se strică hard-disk-ul sau se fură serverul?"
+            answer="Sistemul folosește criptare AES-256 (fără cheia ta, datele sunt ilizibile) și o strategie de backup '3-2-1': datele sunt oglindite pe discuri redundante și salvate criptat într-o a doua locație."
+        />
+
+        <FAQItem
+            colorClass="orange"
+            question="AI-ul local este la fel de deștept ca ChatGPT?"
+            answer="Folosim modele de limbaj (LLM) de ultimă generație optimizate pentru hardware-ul tău. Sunt extrem de capabile în sarcini de analiză financiară, nutriție și automatizare, totul cu latență zero și intimitate totală."
+        />
+
+        <FAQItem
+            colorClass="purple"
+            question="Pot accesa datele când nu sunt acasă?"
+            answer="Da. Folosim tehnologii precum Tailscale pentru a crea un buncăr digital privat între dispozitivele tale. Te conectezi la serverul de acasă de oriunde în lume sigur și rapid, fără a expune datele pe internetul public."
+        />
+
+        <FAQItem
+            colorClass="yellow"
+            question="Pot să import datele vechi din Google sau Apple?"
+            answer="Da. Sistemul include unelte de migrare pentru Google Photos, Drive și iCloud. Îți poți transfera întreaga istorie digitală, apoi poți închide abonamentele fără să pierzi nimic."
+        />
+
+        <FAQItem
+            colorClass="blue"
+            question="Cât consumă acest server la factura de curent?"
+            answer="Serverele noastre sunt ultra-eficiente, consumând în medie cât un bec LED (10-15W). Costul anual este neglijabil față de sutele de euro economisite prin eliminarea abonamentelor."
+        />
+
+        <FAQItem
+            colorClass="emerald"
+            question="Trebuie să fiu programator ca să îl folosesc?"
+            answer="Deloc. Sovereign Life OS are o interfață vizuală intuitivă. Odată configurat, este un sistem 'set and forget'. Primești actualizări automate și totul se gestionează dintr-un tablou de bord simplu."
+        />
+
+        <FAQItem
+            colorClass="purple"
+            question="Este o investiție unică sau are costuri ascunse?"
+            answer="Este o investiție unică în libertatea ta. Nu există taxe lunare sau funcții blocate în spatele unui paywall. Software-ul și datele îți aparțin pe viață."
+        />
+
+        <FAQItem
+            colorClass="orange"
+            question="Cum mă ajută pilonul Strategic (Finance) să produc bani?"
+            answer="AI-ul analizează scurgerile de capital, optimizează dobânzile datoriilor și îți oferă strategii de investiții. Nu doar economisești banii de abonament, ci înveți să îți gestionezi averea mai eficient."
+        />
+    </FAQ>
+
+<WaitlistForm slot="form-area" placeholder="your@email.com" buttonText="Rezervă Acces Prioritar" />
+
+<CTA
+    title="Gata să-ți iei viața înapoi?"
+    subtitle="Alătură-te revoluției suveranității digitale astăzi."
+    buttonText="Rezervă Acces Prioritar"
+/>
+
+    <Footer>
+        <div slot="brand">
+            <h3 class="text-white font-bold text-xl mb-4">Sovereign Life OS</h3>
+            <p class="text-gray-400">Transformă-ți casa într-un ecosistem inteligent și privat.</p>
+        </div>
+
+        <div slot="links">
+            <h4 class="text-white font-bold mb-4">Link-uri</h4>
+            <ul class="text-gray-400 space-y-2">
+                <li><a href="#" class="hover:text-emerald-400 transition-colors">Documentație</a></li>
+                <li><a href="#" class="hover:text-emerald-400 transition-colors">GitHub</a></li>
+                <li><a href="#" class="hover:text-emerald-400 transition-colors">Politică de Confidențialitate</a></li>
+            </ul>
+        </div>
+
+        <div slot="privacy">
+            <h4 class="text-white font-bold mb-4">Intimitate Totală</h4>
+            <p class="text-gray-400 italic text-sm">Datele tale nu părăsesc niciodată rețeaua locală. Fără urmărire. Fără cloud. Fără compromisuri.</p>
+        </div>
+
+        <p slot="copyright">© 2026 Sovereign Life OS. Toate drepturile rezervate.</p>
+    </Footer>
 </Layout>

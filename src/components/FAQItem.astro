@@ -1,7 +1,18 @@
 ---
 const { question, answer, colorClass } = Astro.props;
+
+const colors = {
+  emerald: "text-emerald-400 border-emerald-400/20 hover:border-emerald-400/50",
+  blue: "text-blue-400 border-blue-400/20 hover:border-blue-400/50",
+  purple: "text-purple-400 border-purple-400/20 hover:border-purple-400/50",
+  orange: "text-orange-400 border-orange-400/20 hover:border-orange-400/50",
+  yellow: "text-yellow-400 border-yellow-400/20 hover:border-yellow-400/50",
+  red: "text-red-400 border-red-400/20 hover:border-red-400/50"
+};
+
+const colorStyle = colors[colorClass as keyof typeof colors] || colors.emerald;
 ---
-<div class={`backdrop-blur-xl bg-white/5 border border-white/20 rounded-2xl p-8 hover:border-${colorClass}-400/50 transition-all`}>
-    <h3 class={`text-xl font-bold text-${colorClass}-400 mb-3`}>{question}</h3>
+<div class={`backdrop-blur-xl bg-white/5 border rounded-2xl p-8 transition-all duration-300 ${colorStyle}`}>
+    <h3 class="text-xl font-bold mb-3">{question}</h3>
     <p class="text-gray-400 leading-relaxed">{answer}</p>
 </div>

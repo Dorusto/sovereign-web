@@ -1,453 +1,378 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro'; // Două seturi de puncte
+import Header from '../../components/Header.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import WaitlistForm from '../../components/WaitlistForm.astro';
+import MasterCategories from '../../components/MasterCategories.astro';
+import FinanceAI from '../../components/FinanceAI.astro';
+import HomeAssistant from '../../components/HomeAssistant.astro';
+import Nextcloud from '../../components/Nextcloud.astro';
+import MediaVault from '../../components/MediaVault.astro';
+import HealthAI from '../../components/HealthAI.astro';
+import FAQ from '../../components/FAQ.astro';
+import FAQItem from '../../components/FAQItem.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+
+const pillarData = [
+  { icon: "🥗", title: "AI Kitchen & Nutrition", desc: "Expiring food notifications and smart shopping lists.", color: "emerald" },
+  { icon: "🧠", title: "Health & Clarity", desc: "Your local AI acts as a private wellness and fitness journal.", color: "blue" },
+  { icon: "🏠", title: "Home Assistant", desc: "Automations and voice control processed 100% inside your home.", color: "cyan" }
+];
 ---
 
-<Layout title="Sovereign Life OS - The Digital Butler that doesn't spy on you">
-	<div class="min-h-screen flex flex-col">
-		<!-- Navigation -->
-		<nav class="backdrop-blur-md bg-white/5 border-b border-white/10 sticky top-0 z-50">
-			<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-				<div class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
-					Sovereign Life OS
-				</div>
-				<div class="text-sm text-gray-400">Private. Local. Yours.</div>
-			</div>
-		</nav>
+<Layout title="Sovereign Life OS">
+    <Header title="Sovereign Life OS" subtitle="Private. Local. Yours"/>
 
-		<!-- Hero Section -->
-		<section class="relative px-6 py-24 md:py-32 overflow-hidden">
-			<!-- Animated background gradient -->
-			<div class="absolute inset-0 -z-10">
-				<div class="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-				<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-			</div>
+    <HeroSection
+        titlePart1="The Digital Butler"
+        titlePart2="that doesn't spy on you"
+        subtitle="Replace Google, Alexa, and expensive subscriptions with a single, local central brain."
+    >
+        <WaitlistForm slot="form-area" />
+    </HeroSection>
 
-			<div class="max-w-5xl mx-auto text-center">
-				<!-- Main Title -->
-				<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-					<span class="bg-gradient-to-r from-emerald-300 via-emerald-400 to-blue-500 bg-clip-text text-transparent">
-						The Digital Butler
-					</span>
-					<br />
-					<span class="text-white">that doesn't spy on you</span>
-				</h1>
+<MasterCategories>
+  <div slot="header">
+    <h2 class="text-4xl md:text-6xl font-extrabold mb-6 italic tracking-tight text-white">
+      Sovereign <span class="text-emerald-400">Life OS</span>
+    </h2>
+    <p class="text-xl text-gray-400 max-w-3xl mx-auto italic">
+      "A complete architecture for the modern human who refuses to be a product."
+    </p>
+  </div>
 
-				<!-- Subtitle -->
-				<p class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-					Replace Google, Alexa, and expensive subscriptions with a single central brain, local.
-					<span class="block mt-3 text-emerald-400 font-semibold text-lg">Your health, finances, and home—under your complete control.</span>
-				</p>
+  <div class="relative group p-8 rounded-3xl border border-blue-500/30 bg-gradient-to-br from-blue-600/20 to-cyan-500/10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 flex flex-col">
+    <div class="text-5xl mb-6">🛡️</div>
+    <h3 class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase mb-2">Data Sovereignty</h3>
+    <h4 class="text-2xl font-bold text-white mb-4">Digital Pillar: FOUNDATION</h4>
+    <p class="text-gray-300 mb-6 leading-relaxed">The foundation upon which you rebuild your freedom. Replace corporate infrastructure with your own digital bunker.</p>
+    <div class="space-y-3 mb-8">
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Private Cloud (Docs/Photos)</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Identity Vault (Passwords/2FA)</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Private 4K Media Streaming</div>
+    </div>
+    <div class="pt-6 border-t border-white/10 mt-auto">
+      <p class="text-xs text-gray-500 italic">Replaces: Google One, iCloud, Dropbox, OneDrive, LastPass.</p>
+    </div>
+  </div>
 
-				<!-- Waitlist Form - Prominent -->
-				<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 max-w-md mx-auto mb-16 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 shadow-2xl shadow-emerald-500/10">
-					<form id="waitlistForm" method="POST" action="https://formspree.io/f/mojlgaya" class="flex flex-col gap-4">
-						<div class="relative">
-							<input
-								type="email"
-								name="email"
-								placeholder="your@email.com"
-								required
-								class="w-full px-4 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/30 transition-all"
-							/>
-						</div>
-						<button
-							type="submit"
-							class="w-full px-6 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white font-bold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/60 hover:scale-105 active:scale-95 transform"
-						>
-							Reserve Priority Access
-						</button>
-					</form>
-					<p id="successMessage" class="text-emerald-400 font-semibold mt-4 hidden flex items-center justify-center gap-2">
-						<span>✓</span> <span>Thank you! We've added you to the waitlist.</span>
-					</p>
-				</div>
+  <div class="relative group p-8 rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-600/20 to-lime-500/10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 flex flex-col">
+    <div class="text-5xl mb-6">🧠</div>
+    <h3 class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase mb-2">Intelligence & Wellness</h3>
+    <h4 class="text-2xl font-bold text-white mb-4">Vital Pillar: MENTOR</h4>
+    <p class="text-gray-300 mb-6 leading-relaxed">Your physical and mental evolution guided by an AI that knows your biometrics but respects your privacy.</p>
+    <div class="space-y-3 mb-8">
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>AI Health & Fitness Coach</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Nutrition & Fridge Inventory</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Local Biometric Analysis</div>
+    </div>
+    <div class="pt-6 border-t border-white/10 mt-auto">
+      <p class="text-xs text-gray-500 italic">Replaces: MyFitnessPal, Strava, AI Coaches, Medical Journals.</p>
+    </div>
+  </div>
 
-				<!-- Trust badges -->
-				<div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-					<div class="flex items-center gap-2">
-						<span class="text-emerald-400">✓</span> Open Source
-					</div>
-					<div class="flex items-center gap-2">
-						<span class="text-emerald-400">✓</span> Self-Hosted
-					</div>
-					<div class="flex items-center gap-2">
-						<span class="text-emerald-400">✓</span> Privacy First
-					</div>
-				</div>
-			</div>
-		</section>
+  <div class="relative group p-8 rounded-3xl border border-yellow-500/30 bg-gradient-to-br from-yellow-600/20 to-orange-500/10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 flex flex-col">
+    <div class="text-5xl mb-6">🏛️</div>
+    <h3 class="text-xs font-bold tracking-[0.2em] text-emerald-400 uppercase mb-2">Prosperity & Autonomy</h3>
+    <h4 class="text-2xl font-bold text-white mb-4">Strategic Pillar: ARCHITECT</h4>
+    <p class="text-gray-300 mb-6 leading-relaxed">The brain that optimizes your home resources and your portfolio. The only pillar that generates both money and time.</p>
+    <div class="space-y-3 mb-8">
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Sovereign Finance (Budget/Investments)</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Home & Energy Control</div>
+      <div class="flex items-center gap-3 text-sm text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Automated Shopping</div>
+    </div>
+    <div class="pt-6 border-t border-white/10 mt-auto">
+      <p class="text-xs text-gray-500 italic">Replaces: YNAB, Alexa, Google Home, Financial Consultants.</p>
+    </div>
+  </div>
 
-		<!-- Your Ecosystem Without Subscriptions - Savings Calculator -->
-		<section class="px-6 py-20 md:py-28 bg-gradient-to-b from-transparent via-white/5 to-transparent">
-			<div class="max-w-7xl mx-auto">
-				<div class="text-center mb-16">
-					<h2 class="text-4xl md:text-5xl font-bold mb-4">
-						Your Ecosystem
-						<span class="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
-							Without Subscriptions
-						</span>
-					</h2>
-					<p class="text-gray-400 text-lg max-w-2xl mx-auto">
-						Compare costs: cloud services vs. your local solution
-					</p>
-				</div>
+  <div slot="footer-stats">
+    <h3 class="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-4">The Impact of Sovereignty on Capital</h3>
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="text-left">
+            <p class="text-3xl md:text-4xl font-bold text-white mb-2">Recover <span class="text-emerald-400">€1,500+</span> / year</p>
+            <p class="text-gray-400 text-sm md:text-base">By consolidating the 3 pillars and stopping capital leaks to 15+ useless subscriptions.</p>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/10 relative overflow-hidden group">
+            <p class="text-xs text-gray-500 uppercase mb-1 relative z-10">5-Year Projection</p>
+            <p class="text-5xl font-black text-white italic relative z-10">€7,500</p>
+            <p class="text-[10px] text-emerald-500/70 mt-2 font-medium relative z-10 uppercase tracking-tighter">Money that stays in your pocket</p>
+            <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-emerald-500/10 blur-2xl rounded-full"></div>
+        </div>
+    </div>
+  </div>
+</MasterCategories>
 
-				<!-- Savings Comparison Grid -->
-				<div class="grid md:grid-cols-3 gap-6 mb-12">
-					<!-- Cloud Storage -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-red-400/50 hover:bg-white/15 transition-all duration-300">
-						<div class="flex items-center justify-between mb-4">
-							<div>
-								<p class="text-sm text-gray-400 mb-2">Cloud Storage</p>
-								<p class="text-2xl font-bold text-red-400">❌ $120/year</p>
-							</div>
-							<div class="text-4xl">☁️</div>
-						</div>
-						<p class="text-gray-500 text-sm mb-4">Google One / iCloud (2TB)</p>
-						<div class="border-t border-white/10 pt-4">
-							<p class="text-sm text-gray-400 mb-2">Your solution:</p>
-							<p class="text-2xl font-bold text-emerald-400">✅ $0</p>
-							<p class="text-gray-500 text-sm">Nextcloud & Immich</p>
-						</div>
-					</div>
+    <FinanceAI
+    title="Sovereign Finance:"
+    highlight="Clarity & Prosperity"
+    description="The first and most important pillar. A financial brain that scans your invoices, optimizes your debt, and plans your future—without any bank or corporation knowing your net worth."
+    features={[
+        "Automatic receipt/invoice scanning via local AI",
+        "Real-time budget monitoring (Cashflow vs. Expenses)",
+        "Personalized debt elimination strategies (Snowball/Avalanche)",
+        "Goal planner: 'Can I afford this trip?'",
+        "Portfolio analysis and investment simulations",
+        "Legal digital archive: Organized and searchable invoices"
+    ]}
+>
+    <div slot="visual-element" class="flex-1 hidden md:block">
+        <div class="backdrop-blur-xl bg-gradient-to-br from-yellow-600/20 to-emerald-600/20 border border-yellow-500/30 rounded-xl p-8 text-center">
+            <p class="text-white font-bold mb-4 text-lg">Replaces</p>
+            <div class="space-y-3 mb-6">
+                <p class="text-gray-300 line-through opacity-50">YNAB (You Need A Budget)</p>
+                <p class="text-gray-300 line-through opacity-50">Receipt Bank / Expensify</p>
+                <p class="text-gray-300 line-through opacity-50">Complicated Spreadsheets</p>
+                <p class="text-gray-300 line-through opacity-50">Management Fees</p>
+            </div>
+            <div class="pt-4 border-t border-white/10">
+                <p class="text-yellow-400 font-bold text-xl">Financial Sovereignty</p>
+            </div>
+        </div>
+    </div>
+</FinanceAI>
 
-					<!-- Password Manager -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-red-400/50 hover:bg-white/15 transition-all duration-300">
-						<div class="flex items-center justify-between mb-4">
-							<div>
-								<p class="text-sm text-gray-400 mb-2">Password Manager</p>
-								<p class="text-2xl font-bold text-red-400">❌ $36/year</p>
-							</div>
-							<div class="text-4xl">🔐</div>
-						</div>
-						<p class="text-gray-500 text-sm mb-4">1Password / LastPass</p>
-						<div class="border-t border-white/10 pt-4">
-							<p class="text-sm text-gray-400 mb-2">Your solution:</p>
-							<p class="text-2xl font-bold text-emerald-400">✅ $0</p>
-							<p class="text-gray-500 text-sm">Vaultwarden</p>
-						</div>
-					</div>
+<HomeAssistant
+    title="Home Assistant:"
+    highlight="Your Home's Brain"
+    description="Total control over your smart devices without sending data to Amazon, Google, or Apple. Automations that work even without an internet connection."
+    features={[
+        "Local control for lights, sensors, and plugs",
+        "Complex automations based on your presence",
+        "Customizable interface for tablet or phone",
+        "Integration with over 2000 hardware brands"
+    ]}
+>
+    <div slot="visual-element" class="flex-1 hidden md:block">
+        <div class="backdrop-blur-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-white/20 rounded-xl p-8 text-center">
+            <p class="text-white font-bold mb-4 text-lg">Replaces</p>
+            <div class="space-y-3 mb-6">
+                <p class="text-gray-300 line-through opacity-50">Amazon Alexa</p>
+                <p class="text-gray-300 line-through opacity-50">Google Home</p>
+                <p class="text-gray-300 line-through opacity-50">Apple HomeKit (Cloud)</p>
+                <p class="text-gray-300 line-through opacity-50">Samsung SmartThings</p>
+            </div>
+            <p class="text-orange-400 font-bold text-xl">100% Local Privacy</p>
+        </div>
+    </div>
+</HomeAssistant>
 
-					<!-- Health & Fitness Apps -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-red-400/50 hover:bg-white/15 transition-all duration-300">
-						<div class="flex items-center justify-between mb-4">
-							<div>
-								<p class="text-sm text-gray-400 mb-2">Health & Fitness</p>
-								<p class="text-2xl font-bold text-red-400">❌ $150/year</p>
-							</div>
-							<div class="text-4xl">💪</div>
-						</div>
-						<p class="text-gray-500 text-sm mb-4">Fitness & Mental Health Apps</p>
-						<div class="border-t border-white/10 pt-4">
-							<p class="text-sm text-gray-400 mb-2">Your solution:</p>
-							<p class="text-2xl font-bold text-emerald-400">✅ $0</p>
-							<p class="text-gray-500 text-sm">AI Health Coach</p>
-						</div>
-					</div>
-				</div>
+    <Nextcloud
+        title="Nextcloud:"
+        highlight="Your Private Office"
+        description="The complete alternative to Google Cloud/Drive. Documents, Calendars, and Contacts synced across all your devices, without corporate access."
+        features={["Automatic sync across all devices",
+        "Real-time collaboration",
+        "Private calendar and contacts",
+        "Automatic encrypted backup"]}
+    >
+        <div slot="visual-element" class="flex-1 hidden md:block">
+        <div class="backdrop-blur-xl bg-gradient-to-br from-emerald-500/20 to-blue-500/20 border border-white/20 rounded-xl p-8 text-center">
+            <p class="text-white font-bold mb-4 text-lg">Replaces:</p>
+            <div class="space-y-3 mb-6">
+                <p class="text-gray-300 line-through opacity-50">Google Drive & Photos</p>
+                <p class="text-gray-300 line-through opacity-50">Microsoft Office 365</p>
+                <p class="text-gray-300 line-through opacity-50">Dropbox & Box</p>
+                <p class="text-gray-300 line-through opacity-50">Evernote & Slack</p>
+                <p class="text-gray-300 line-through opacity-50">iCloud / Apple One</p>
+            </div>
+            <p class="text-emerald-400 font-bold text-lg">With a single solution</p>
+        </div>
+    </div>
+    </Nextcloud>
 
-				<!-- Total Savings -->
-				<div class="backdrop-blur-xl bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-400/50 rounded-2xl p-8 text-center">
-					<p class="text-gray-300 text-lg mb-2">Total Annual Savings</p>
-					<p class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent mb-4">
-						Over $300/year
-					</p>
-					<p class="text-emerald-400 font-semibold text-lg">
-						The system pays for itself in 2 years. After that, just savings.
-					</p>
-				</div>
-			</div>
-		</section>
+<MediaVault
+    title="Digital Vault:"
+    highlight="Memories & Media"
+    description="Transform your collection of movies, music, and photos into a personal streaming service. Original 4K quality, no compression, and no monthly fees."
+    features={[
+        "4K streaming without buffering on local network",
+        "Automatic photo backup from phone (Immich)",
+        "Facial recognition and local AI organization",
+        "Access your music and audiobook library anywhere"
+    ]}
+>
+    <div slot="visual-element" class="flex-1 hidden md:block">
+        <div class="backdrop-blur-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-white/20 rounded-xl p-8 text-center">
+            <p class="text-white font-bold mb-4 text-lg">Replaces</p>
+            <div class="space-y-3 mb-6">
+                <p class="text-gray-300 line-through opacity-50">Netflix & Disney+</p>
+                <p class="text-gray-300 line-through opacity-50">Google Photos (Paid)</p>
+                <p class="text-gray-300 line-through opacity-50">Spotify & Audible</p>
+                <p class="text-gray-300 line-through opacity-50">iCloud Storage</p>
+            </div>
+            <p class="text-purple-400 font-bold text-xl">Your Own Cinema</p>
+        </div>
+    </div>
+</MediaVault>
 
-		<!-- The 3 Pillars of Intelligence - Updated -->
-		<section class="px-6 py-20 md:py-28">
-			<div class="max-w-7xl mx-auto">
-				<div class="text-center mb-16">
-					<h2 class="text-4xl md:text-5xl font-bold mb-4">
-						The 3 Pillars of
-						<span class="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
-							Intelligence
-						</span>
-					</h2>
-					<p class="text-gray-400 text-lg max-w-2xl mx-auto">
-						Three AI agents working locally to simplify your life
-					</p>
-				</div>
+<HealthAI
+    title="Sovereign:"
+    highlight="Health & Vitality"
+    description="More than just a database, it's your personal coach that doesn't judge you or sell your data. An integrated system that understands the link between how you move and what you eat."
+    features={[
+        "AI Running Coach: heart-rate based plans",
+        "Locally generated fitness programs (Age/Weight/Sex)",
+        "Auto-correlation: Training vs. Nutrients consumed",
+        "Sleep quality analysis and recovery recommendations",
+        "100% Privacy: Your biometric data stays in your house",
+        "No monthly fees for 'premium features'"
+    ]}
+>
+    <div slot="visual-element" class="flex-1 hidden md:block">
+        <div class="backdrop-blur-xl bg-gradient-to-br from-emerald-500/20 to-blue-500/20 border border-white/20 rounded-xl p-8 text-center">
+            <p class="text-white font-bold mb-4 text-lg">Replaces</p>
+            <div class="space-y-3 mb-6 text-sm">
+                <p class="text-gray-300 line-through opacity-50">Strava & Runkeeper Premium</p>
+                <p class="text-gray-300 line-through opacity-50">Freeletics & MyFitnessPal</p>
+                <p class="text-gray-300 line-through opacity-50">Whoop / Oura Subscription</p>
+                <p class="text-gray-300 line-through opacity-50">Apple Fitness+</p>
+            </div>
+            <div class="pt-4 border-t border-white/10">
+                <p class="text-blue-400 font-bold text-lg">Performance without Surveillance</p>
+            </div>
+        </div>
+    </div>
+</HealthAI>
 
-				<div class="grid md:grid-cols-3 gap-8">
-					<!-- Pillar 1: Kitchen & Nutrition -->
-					<div class="group backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 hover:shadow-xl hover:shadow-emerald-500/20">
-						<div class="text-6xl mb-6">🥗</div>
-						<h3 class="text-2xl font-bold mb-4 text-emerald-400 group-hover:text-emerald-300 transition-colors">
-							AI Kitchen & Nutrition
-						</h3>
-						<p class="text-gray-400 leading-relaxed italic">
-							Notifications before food expires and smart shopping lists. Reduce waste, save money.
-						</p>
-					</div>
+<section class="py-24 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-red-500/10 blur-[120px] rounded-full -z-10"></div>
 
-					<!-- Pillar 2: Mental & Physical Health -->
-					<div class="group backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-blue-400/50 hover:bg-white/15 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/20">
-						<div class="text-6xl mb-6">🧠</div>
-						<h3 class="text-2xl font-bold mb-4 text-blue-400 group-hover:text-blue-300 transition-colors">
-							Health & Mental Clarity
-						</h3>
-						<p class="text-gray-400 leading-relaxed italic">
-							Your local AI acts as a private wellness journal. Correlates mood with daily activities and offers personalized fitness plans, without a single second of your private life reaching the Cloud.
-						</p>
-					</div>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">The Great <span class="text-red-500">Purge</span></h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Sovereign Life OS isn't another fee. It's the tool that eliminates all the others.
+            </p>
+        </div>
 
-					<!-- Pillar 3: Home Assistant -->
-					<div class="group backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-cyan-400/50 hover:bg-white/15 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/20">
-						<div class="text-6xl mb-6">🏠</div>
-						<h3 class="text-2xl font-bold mb-4 text-cyan-400 group-hover:text-cyan-300 transition-colors">
-							Home Assistant (Local Control)
-						</h3>
-						<p class="text-gray-400 leading-relaxed italic">
-							Say goodbye to Google/Alexa boxes that listen to you. Automations and voice control processed 100% in your home.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {[
+                "Netflix", "Spotify", "iCloud", "Google One",
+                "YNAB", "Strava", "Dropbox", "Evernote",
+                "Zapier", "Notion", "LastPass", "MyFitnessPal",
+                "Amazon Alexa", "Life360", "Microsoft 365", "Audible",
+                "Disney+", "Zoom", "Slack", "WeTransfer Pro",
+                "OneDrive", "Apple Music", "HBO Max", "Bitwarden Cloud"
+            ].map((service) => (
+                <div class="group relative bg-white/5 border border-white/10 p-4 rounded-xl flex items-center justify-center transition-all duration-500 hover:bg-red-500/10 hover:border-red-500/30">
+                    <span class="text-gray-500 font-medium group-hover:text-red-400 transition-colors">
+                        {service}
+                    </span>
+                    <div class="absolute w-0 h-[2px] bg-red-500 left-0 top-1/2 -translate-y-1/2 transition-all duration-500 group-hover:w-full opacity-0 group-hover:opacity-100 shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
+                </div>
+            ))}
+        </div>
 
-		<!-- Nextcloud: Your Private Office -->
-		<section class="px-6 py-20 md:py-28 bg-gradient-to-r from-blue-500/10 via-transparent to-emerald-500/10 border-y border-white/10">
-			<div class="max-w-5xl mx-auto">
-				<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-12">
-					<div class="flex flex-col md:flex-row items-center gap-8">
-						<div class="flex-1">
-							<div class="text-6xl mb-6">☁️</div>
-							<h2 class="text-4xl md:text-5xl font-bold mb-4">
-								Nextcloud:
-								<span class="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
-									Your Private Office
-								</span>
-							</h2>
-							<p class="text-gray-300 text-lg leading-relaxed mb-6">
-								The complete alternative to Google Cloud/Drive. Documents, Calendar, and Contacts synchronized across all your devices, without any corporation having access to them.
-							</p>
-							<ul class="space-y-3 text-gray-400">
-								<li class="flex items-center gap-3">
-									<span class="text-emerald-400 text-xl">✓</span> Automatic sync across all devices
-								</li>
-								<li class="flex items-center gap-3">
-									<span class="text-emerald-400 text-xl">✓</span> Real-time collaboration on documents
-								</li>
-								<li class="flex items-center gap-3">
-									<span class="text-emerald-400 text-xl">✓</span> Private calendar and contacts
-								</li>
-								<li class="flex items-center gap-3">
-									<span class="text-emerald-400 text-xl">✓</span> Automatic backup and versioning
-								</li>
-							</ul>
-						</div>
-						<div class="flex-1 hidden md:block">
-							<div class="backdrop-blur-xl bg-gradient-to-br from-emerald-500/20 to-blue-500/20 border border-white/20 rounded-xl p-8 text-center">
-								<p class="text-gray-400 mb-4">Replaces</p>
-								<div class="space-y-3 mb-6">
-									<p class="text-gray-300 line-through">Google Drive</p>
-									<p class="text-gray-300 line-through">Microsoft OneDrive</p>
-									<p class="text-gray-300 line-through">Dropbox</p>
-									<p class="text-gray-300 line-through">iCloud</p>
-								</div>
-								<p class="text-emerald-400 font-bold text-lg">With a single solution</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <div class="mt-16 p-8 bg-gradient-to-r from-red-500/10 to-transparent border-l-4 border-red-500 rounded-r-2xl">
+            <p class="text-white text-xl md:text-2xl font-light italic">
+                "We calculated that the average user saves between <span class="text-red-400 font-bold">€1,200 and €2,500 per year</span> by simply consolidating these services into their own system."
+            </p>
+        </div>
+    </div>
+</section>
 
-		<!-- Your Private Ecosystem -->
-		<section class="px-6 py-20 md:py-28">
-			<div class="max-w-7xl mx-auto">
-				<div class="text-center mb-16">
-					<h2 class="text-4xl md:text-5xl font-bold mb-4">
-						Your Complete
-						<span class="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
-							Ecosystem
-						</span>
-					</h2>
-					<p class="text-gray-400 text-lg max-w-2xl mx-auto">
-						Open-source applications working in harmony on your server
-					</p>
-				</div>
+<FAQ>
+        <div slot="title">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Frequently Asked <span class="text-emerald-400">Questions</span></h2>
+            <p class="text-gray-400 italic">Everything you need to know about your new digital sovereignty.</p>
+        </div>
 
-				<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-					<!-- Immich -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-xl p-6 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
-						<div class="text-4xl mb-3">🖼️</div>
-						<h4 class="font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Immich</h4>
-						<p class="text-sm text-gray-500">Private alternative to Google Photos</p>
-					</div>
+        <FAQItem
+            colorClass="emerald"
+            question="Where is my data physically stored?"
+            answer="On a server (Mini PC or NAS) located in your home. No intermediate 'cloud', no foreign servers, and no unauthorized access. You own the hardware, you own the data."
+        />
 
-					<!-- Vaultwarden -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-xl p-6 hover:border-blue-400/50 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
-						<div class="text-4xl mb-3">🔐</div>
-						<h4 class="font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">Vaultwarden</h4>
-						<p class="text-sm text-gray-500">Self-hosted password manager</p>
-					</div>
+        <FAQItem
+            colorClass="blue"
+            question="What happens if the internet goes down?"
+            answer="The system works perfectly offline. You can control your home, watch movies from your library, or access documents. Sovereignty means not depending on an external connection for basic life functions."
+        />
 
-					<!-- Paperless-ngx -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-xl p-6 hover:border-cyan-400/50 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
-						<div class="text-4xl mb-3">📄</div>
-						<h4 class="font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">Paperless-ngx</h4>
-						<p class="text-sm text-gray-500">Your digital vault for documents</p>
-					</div>
+        <FAQItem
+            colorClass="red"
+            question="What if the hard drive fails or the server is stolen?"
+            answer="The system uses AES-256 encryption (without your key, data is unreadable) and a '3-2-1' backup strategy: data is mirrored on redundant disks and backed up encrypted to a second location."
+        />
 
-					<!-- Jellyfin -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-xl p-6 hover:border-purple-400/50 hover:bg-white/15 transition-all duration-300 group cursor-pointer">
-						<div class="text-4xl mb-3">🎬</div>
-						<h4 class="font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Jellyfin</h4>
-						<p class="text-sm text-gray-500">Your private Netflix</p>
-					</div>
-				</div>
-			</div>
-		</section>
+        <FAQItem
+            colorClass="orange"
+            question="Is the local AI as smart as ChatGPT?"
+            answer="We use state-of-the-art LLMs optimized for your hardware. They are highly capable in financial analysis, nutrition, and automation tasks—all with zero latency and total privacy."
+        />
 
-		<!-- FAQ Sovereign -->
-		<section class="px-6 py-20 md:py-28 bg-gradient-to-b from-transparent via-white/5 to-transparent">
-			<div class="max-w-7xl mx-auto">
-				<div class="text-center mb-16">
-					<h2 class="text-4xl md:text-5xl font-bold mb-4">
-						Frequently Asked
-						<span class="bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
-							Questions
-						</span>
-					</h2>
-					<p class="text-gray-400 text-lg">Quick answers to your questions</p>
-				</div>
+        <FAQItem
+            colorClass="purple"
+            question="Can I access my data when I'm not at home?"
+            answer="Yes. We use technologies like Tailscale to create a private digital bunker between your devices. You connect to your home server from anywhere in the world securely and quickly."
+        />
 
-				<div class="grid md:grid-cols-2 gap-6">
-					<!-- FAQ 1 -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-emerald-400/50 hover:bg-white/15 transition-all duration-300">
-						<h3 class="text-xl font-bold text-emerald-400 mb-3">
-							What happens if the internet goes down?
-						</h3>
-						<p class="text-gray-400 leading-relaxed">
-							Everything continues to work. Your home stays smart, the AI stays active. Only synchronization with other devices is delayed until the connection returns.
-						</p>
-					</div>
+        <FAQItem
+            colorClass="yellow"
+            question="Can I import my old data from Google or Apple?"
+            answer="Yes. The system includes migration tools for Google Photos, Drive, and iCloud. You can transfer your entire digital history and cancel your subscriptions without losing anything."
+        />
 
-					<!-- FAQ 2 -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-blue-400/50 hover:bg-white/15 transition-all duration-300">
-						<h3 class="text-xl font-bold text-blue-400 mb-3">
-							Where is my data?
-						</h3>
-						<p class="text-gray-400 leading-relaxed">
-							On the hard drive in your living room. Period. No company has access to it. You are the sole owner.
-						</p>
-					</div>
+        <FAQItem
+            colorClass="blue"
+            question="How much power does this server consume?"
+            answer="Our servers are ultra-efficient, consuming about as much as an LED bulb (10-15W). The annual cost is negligible compared to the hundreds of euros saved by eliminating subscriptions."
+        />
 
-					<!-- FAQ 3 -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-cyan-400/50 hover:bg-white/15 transition-all duration-300">
-						<h3 class="text-xl font-bold text-cyan-400 mb-3">
-							How difficult is it to install?
-						</h3>
-						<p class="text-gray-400 leading-relaxed">
-							We've created step-by-step guides for every skill level. Even for beginners. Community support is always available.
-						</p>
-					</div>
+        <FAQItem
+            colorClass="emerald"
+            question="Do I need to be a programmer to use it?"
+            answer="Not at all. Sovereign Life OS has an intuitive visual interface. Once configured, it's a 'set and forget' system with automatic updates and a simple dashboard."
+        />
 
-					<!-- FAQ 4 -->
-					<div class="backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-2xl p-8 hover:border-purple-400/50 hover:bg-white/15 transition-all duration-300">
-						<h3 class="text-xl font-bold text-purple-400 mb-3">
-							What hardware do I need?
-						</h3>
-						<p class="text-gray-400 leading-relaxed">
-							A modest server (Raspberry Pi, NAS, or old PC). Initial investment: ~$500. After that, just electricity costs.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
+        <FAQItem
+            colorClass="purple"
+            question="Is it a one-time investment or are there hidden costs?"
+            answer="It is a one-time investment in your freedom. No monthly fees or features locked behind a paywall. The software and data belong to you for life."
+        />
 
-		<!-- CTA Section -->
-		<section class="px-6 py-16 md:py-20">
-			<div class="max-w-3xl mx-auto text-center">
-				<h2 class="text-3xl md:text-4xl font-bold mb-6">
-					Ready to take your life back?
-				</h2>
-				<p class="text-gray-400 text-lg mb-8">
-					Be among the first to access Sovereign Life OS. Limited spots for beta testers.
-				</p>
-				<button
-					onclick="document.getElementById('waitlistForm').scrollIntoView({ behavior: 'smooth' })"
-					class="px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-bold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/50 active:scale-95"
-				>
-					Reserve Priority Access
-				</button>
-				<p class="text-gray-500 text-sm mt-4">
-					Join the 500+ people who chose digital sovereignty.
-				</p>
-			</div>
-		</section>
+        <FAQItem
+            colorClass="orange"
+            question="How does the Strategic (Finance) pillar help me make money?"
+            answer="The AI analyzes capital leaks, optimizes debt interest, and offers investment strategies. You don't just save on subscriptions; you learn to manage your wealth more efficiently."
+        />
+    </FAQ>
 
-		<!-- Footer -->
-		<footer class="backdrop-blur-md bg-white/5 border-t border-white/10 py-12 mt-auto">
-			<div class="max-w-7xl mx-auto px-6">
-				<div class="grid md:grid-cols-3 gap-8 mb-8">
-					<div>
-						<h4 class="font-bold text-white mb-4">Sovereign Life OS</h4>
-						<p class="text-gray-500 text-sm">
-							Transform your home into an intelligent and private ecosystem.
-						</p>
-					</div>
-					<div>
-						<h4 class="font-bold text-white mb-4">Links</h4>
-						<ul class="space-y-2 text-sm text-gray-500 hover:text-gray-400 transition-colors">
-							<li><a href="#" class="hover:text-emerald-400">Documentation</a></li>
-							<li><a href="#" class="hover:text-emerald-400">GitHub</a></li>
-							<li><a href="#" class="hover:text-emerald-400">Contact</a></li>
-						</ul>
-					</div>
-					<div>
-						<h4 class="font-bold text-white mb-4">Privacy</h4>
-						<p class="text-gray-500 text-sm">
-							Your data is never sent to the cloud. Everything stays local on your server.
-						</p>
-					</div>
-				</div>
+    <WaitlistForm
+    slot="form-area"
+    placeholder="your@email.com"
+    buttonText="Reserve Priority Access"
+/>
 
-				<div class="border-t border-white/10 pt-8">
-					<div class="flex flex-col md:flex-row justify-between items-center gap-4">
-						<p class="text-gray-500 text-sm">
-							© 2026 Sovereign Life OS. All rights reserved.
-						</p>
-						<div class="flex gap-6 text-sm text-gray-500">
-							<a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a>
-							<a href="#" class="hover:text-emerald-400 transition-colors">Terms of Service</a>
-						</div>
-					</div>
-				</div>
+<CTA
+    title="Ready to take your life back?"
+    subtitle="Join the digital sovereignty revolution today."
+    buttonText="Reserve Priority Access"
+/>
 
-				<div class="mt-8 p-4 bg-white/5 border border-white/10 rounded-lg text-center">
-					<p class="text-xs text-gray-500">
-						<span class="text-emerald-400 font-semibold">Disclaimer:</span> Sovereign Life OS is in development. Your data is protected with end-to-end encryption and is never transmitted to external servers.
-					</p>
-				</div>
-			</div>
-		</footer>
-	</div>
+    <Footer>
+        <div slot="brand">
+            <h3 class="text-white font-bold text-xl mb-4">Sovereign Life OS</h3>
+            <p class="text-gray-400">Transform your home into a private, smart ecosystem.</p>
+        </div>
 
-	<script>
-		const form = document.getElementById('waitlistForm');
-		const successMessage = document.getElementById('successMessage');
+        <div slot="links">
+            <h4 class="text-white font-bold mb-4">Links</h4>
+            <ul class="text-gray-400 space-y-2">
+                <li><a href="#" class="hover:text-emerald-400 transition-colors">Documentation</a></li>
+                <li><a href="#" class="hover:text-emerald-400 transition-colors">GitHub</a></li>
+                <li><a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a></li>
+            </ul>
+        </div>
 
-		form?.addEventListener('submit', (e) => {
-			e.preventDefault();
-			const email = (form.querySelector('input[type="email"]') as HTMLInputElement)?.value;
-			console.log('✓ Thank you!', email);
-			form.style.display = 'none';
-			successMessage?.classList.remove('hidden');
-			
-			// Reset after 5 seconds
-			setTimeout(() => {
-				form.style.display = 'flex';
-				successMessage?.classList.add('hidden');
-				(form.querySelector('input[type="email"]') as HTMLInputElement).value = '';
-			}, 5000);
-		});
-	</script>
+        <div slot="privacy">
+            <h4 class="text-white font-bold mb-4">Privacy First</h4>
+            <p class="text-gray-400 italic text-sm">Your data never leaves your local network. No tracking. No cloud. No compromise.</p>
+        </div>
+
+        <p slot="copyright">© 2026 Sovereign Life OS. All rights reserved.</p>
+    </Footer>
+
 </Layout>

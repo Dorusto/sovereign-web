@@ -1,13 +1,25 @@
 ---
+// src/components/CTA.astro
+interface Props {
+  title: string;
+  subtitle: string;
+  buttonText: string;
+}
+const { title, subtitle, buttonText } = Astro.props;
 ---
-<section class="px-6 py-20">
-    <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Gata să-ți iei viața înapoi?</h2>
-        <button
-            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-            class="px-8 py-4 rounded-lg bg-gradient-to-r from-emerald-500 to-blue-600 hover:from-emerald-400 hover:to-blue-500 text-white font-bold text-lg transition-all"
-        >
-            Rezervă Acces Prioritar
-        </button>
+<section class="py-20 px-6">
+  <div class="max-w-5xl mx-auto bg-gradient-to-r from-emerald-600 to-blue-600 rounded-[2.5rem] p-12 md:p-20 text-center shadow-2xl relative overflow-hidden">
+    <div class="relative z-10">
+      <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+        {title}
+      </h2>
+      <p class="text-white/80 mb-10 text-lg italic">
+        {subtitle}
+      </p>
+
+      <a href="#waitlist" class="inline-block bg-white text-emerald-600 px-10 py-4 rounded-full font-bold text-xl hover:bg-emerald-50 transition-all shadow-xl">
+        {buttonText}
+      </a>
     </div>
+  </div>
 </section>
