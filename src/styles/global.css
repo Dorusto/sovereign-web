@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+@layer components {
+    /* --- SISTEMUL DE TITLURI (Font & Spacing) --- */
+    .heading-xl {
+        @apply text-5xl md:text-7xl font-bold tracking-tight leading-tight;
+    }
+
+    .heading-lg {
+        @apply text-4xl md:text-6xl font-bold tracking-tight;
+    }
+
+    /* --- GRADIENTUL TĂU SEMNĂTURĂ --- */
+    .text-gradient-sovereign {
+        @apply bg-gradient-to-r from-emerald-300 via-emerald-400 to-blue-500 bg-clip-text text-transparent;
+        /* Adăugăm un fix pentru Safari/Chrome să nu dispară la hover */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* --- STILUL PENTRU SUBTITLURI (ca în MasterCategories) --- */
+    .text-subtitle {
+        @apply text-lg md:text-xl text-gray-400 italic font-light leading-relaxed;
+    }
+}
+
+/* Forțăm fontul global să fie curat și modern */
+body {
+    @apply antialiased selection:bg-emerald-500/30;
+    font-family: system-ui, -apple-system, sans-serif;
+}

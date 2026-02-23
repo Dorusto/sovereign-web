@@ -16,17 +16,14 @@ import TrustBadges from './TrustBadges.astro';
   </div>
 
   <div class="max-w-5xl mx-auto text-center">
-    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-      <span class="bg-gradient-to-r from-emerald-300 via-emerald-400 to-blue-500 bg-clip-text text-transparent">
-        {titlePart1}
-      </span>
+    <h1 class="heading-xl">
+      <span class="text-gradient-sovereign">{titlePart1}</span>
       <br />
       <span class="text-white">{titlePart2}</span>
     </h1>
-
-    <p class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-      {subtitle}
-    </p>
+      <p class="text-subtitle max-w-3xl mx-auto mb-12">
+        {subtitle}
+      </p>
 
     <slot name="form-area" />
 
