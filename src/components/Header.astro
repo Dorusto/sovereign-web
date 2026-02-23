@@ -5,8 +5,11 @@ const isEn = Astro.url.pathname.includes('/en');
 ---
 <nav class="backdrop-blur-md bg-white/5 border-b border-white/10 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
-            <a href={isEn ? "/en" : "/"} class="hover:opacity-80 transition-opacity">
+        <div class="text-2xl font-bold">
+            <a
+                href={isEn ? "/en" : "/"}
+                class="inline-block bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent transition-all duration-300 hover:scale-105 active:scale-95"
+            >
                 {title}
             </a>
         </div>
@@ -19,13 +22,13 @@ const isEn = Astro.url.pathname.includes('/en');
             <div class="flex items-center bg-white/5 rounded-full p-1 border border-white/10">
                 <a
                     href="/"
-                    class={`px-3 py-1 rounded-full text-xs font-bold transition-all ${!isEn ? 'bg-emerald-500 text-white' : 'text-gray-400 hover:text-white'}`}
+                    class={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${!isEn ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/20' : 'text-gray-400 hover:text-white'}`}
                 >
                     RO
                 </a>
                 <a
                     href="/en"
-                    class={`px-3 py-1 rounded-full text-xs font-bold transition-all ${isEn ? 'bg-emerald-500 text-white' : 'text-gray-400 hover:text-white'}`}
+                    class={`px-3 py-1 rounded-full text-xs font-bold transition-all duration-300 ${isEn ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/20' : 'text-gray-400 hover:text-white'}`}
                 >
                     EN
                 </a>
