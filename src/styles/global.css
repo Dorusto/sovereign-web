@@ -7,7 +7,7 @@
     }
 
     .heading-lg {
-        @apply text-4xl md:text-6xl font-bold tracking-tight;
+        @apply text-4xl md:text-6xl font-bold tracking-tight leading-tight;
     }
 
     /* --- GRADIENTUL TĂU SEMNĂTURĂ --- */
