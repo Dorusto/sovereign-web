@@ -8,8 +8,9 @@ const isEn = Astro.url.pathname.includes('/en');
         <div class="text-2xl font-bold">
             <a
                 href={isEn ? "/en" : "/"}
-                class="inline-block bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent transition-all duration-300 hover:scale-105 active:scale-95"
+                class="inline-block flex items-center gap-3 text-gradient-sovereign transition-all duration-300 hover:scale-105 active:scale-95"
             >
+                <img src="/favicon.svg" alt="Logo" class="w-8 h-8 object-contain" />
                 {title}
             </a>
         </div>
