@@ -1,14 +1,35 @@
 ---
 const { title, subtitle } = Astro.props;
+// Detectăm dacă suntem pe pagina de engleză sau română pentru a stiliza butonul activ
+const isEn = Astro.url.pathname.includes('/en');
 ---
-<!-- Navigation -->
-    <nav class="backdrop-blur-md bg-white/5 border-b border-white/10 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <div class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+<nav class="backdrop-blur-md bg-white/5 border-b border-white/10 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div class="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+            <a href={isEn ? "/en" : "/"} class="hover:opacity-80 transition-opacity">
                 {title}
-            </div>
-            <div class="text-sm text-gray-400">
+            </a>
+        </div>
+
+        <div class="flex items-center gap-6">
+            <div class="hidden md:block text-sm text-gray-400 italic">
                 {subtitle}
             </div>
+
+            <div class="flex items-center bg-white/5 rounded-full p-1 border border-white/10">
+                <a
+                    href="/"
+                    class={`px-3 py-1 rounded-full text-xs font-bold transition-all ${!isEn ? 'bg-emerald-500 text-white' : 'text-gray-400 hover:text-white'}`}
+                >
+                    RO
+                </a>
+                <a
+                    href="/en"
+                    class={`px-3 py-1 rounded-full text-xs font-bold transition-all ${isEn ? 'bg-emerald-500 text-white' : 'text-gray-400 hover:text-white'}`}
+                >
+                    EN
+                </a>
+            </div>
         </div>
-    </nav>
+    </div>
+</nav>
