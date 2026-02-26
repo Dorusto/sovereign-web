@@ -33,12 +33,16 @@ Acest document urmărește progresul dezvoltării site-ului oficial și planific
 ## 🎯 **Rezultate Așteptate - Săptămâna Aceasta**
 
 ### **1. DESIGN ALINIAT** (măsurabil)
-- [ ] **Fonturi:** Același font size/weight pentru toate h1, h2, h3
-- [ ] **Spacing:** Aceeași padding între toate secțiunile
+- [x] **Fonturi:** Același font size/weight pentru toate h1, h2, h3
+  - ✅ Reparat: "Life OS" nu mai are `italic` care tăia "S"-ul
+  - ✅ Consistent: MasterCategories folosește `heading-xl` ca HeroSection
+- [x] **Spacing și Styling:** CTA.astro reparat să se potrivească cu site-ul
+  - ✅ Reparat de tine: CTA acum arată consistent cu restul site-ului
 - [ ] **Culori:** Gradient-ul principal folosit consistent
 
 ### **2. MESAJE CLARE** (testabil)
-- [ ] **Scop:** 1 propoziție care explică produsul (oricine înțelege)
+- [x] **Scop:** 1 propoziție care explică produsul (oricine înțelege)
+  - ✅ Consistent: MasterCategories folosește props (`titlePart1`, `titlePart2`, `subtitle`) ca HeroSection
 - [ ] **Audience:** Știm exact cine ar cumpăra
 - [ ] **Beneficii:** 3 beneficii concrete (bani, timp, intimitate)
 
