@@ -23,3 +23,17 @@
 - ✅ DA: Rezultate concrete, măsurabile, testabile
 - ✅ DA: Comunicare directă, fără overhead
 - ✅ DA: Focus pe ce se vede și se înțelege
+
+## 🚨 **Lecție Importantă Adăugată (CTA.astro incident):**
+**Înțelegere vizuală vs soluții tehnice:**
+- ❌ NU: Propune soluții tehnice fără să înțeleg cerința vizuală
+- ✅ DA: Cere exemple concrete ("arată-mi ce nu-ți place")
+- ✅ DA: Întreabă despre feeling/emoție dorită
+- ✅ DA: Propune variante vizuale, nu doar cod
+- ✅ DA: Verifică înțelegerea înainte de a propune soluții
+
+**Exemplu din CTA.astro:**
+- ❌ GREȘIT: "Folosește backdrop-blur-xl și border border-white/20"
+- ✅ CORECT: "Vreau să arate ca FinanceAI.astro - același feeling sofisticat"
+
+**Regulă: Întotdeauna cere clarificări vizuale înainte de soluții tehnice.**
