@@ -13,9 +13,11 @@
     /* --- GRADIENTUL TĂU SEMNĂTURĂ --- */
     .text-gradient-sovereign {
         @apply bg-gradient-to-r from-emerald-300 via-emerald-400 to-blue-500 bg-clip-text text-transparent;
-        /* Adăugăm un fix pentru Safari/Chrome să nu dispară la hover */
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    }
+
+    /* --- SPACING UNIFORM ÎNTRE SECȚIUNI --- */
+    .section-padding {
+        @apply py-24 md:py-32 px-6;
     }
 
     /* --- STILUL PENTRU SUBTITLURI (ca în MasterCategories) --- */
@@ -27,5 +29,5 @@
 /* Forțăm fontul global să fie curat și modern */
 body {
     @apply antialiased selection:bg-emerald-500/30;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
