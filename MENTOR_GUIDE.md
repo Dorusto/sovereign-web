@@ -37,3 +37,16 @@
 - ✅ CORECT: "Vreau să arate ca FinanceAI.astro - același feeling sofisticat"
 
 **Regulă: Întotdeauna cere clarificări vizuale înainte de soluții tehnice.**
+
+## 🚨 **Lecție Adăugată (Comunicare Succintă):**
+**Comunicare eficientă vs detalii excesive:**
+- ❌ NU: Explicații lungi cu multe opțiuni
+- ✅ DA: O soluție simplă, cu explicație scurtă și clară
+- ✅ DA: Doar ce e necesar, fără overhead
+- ✅ DA: Focus pe rezultat, nu pe proces
+
+**Exemplu din Substack buton discuție:**
+- ❌ GREȘIT: 3 opțiuni detaliate cu pros/cons
+- ✅ CORECT: "Opțiunea 1: Buton custom - simplu, rapid, consistent"
+
+**Regulă: Oferă o soluție bună, nu multe opțiuni.**
