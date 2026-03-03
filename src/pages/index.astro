@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import HeroSection from '../components/HeroSection.astro';
-import WaitlistForm from '../components/WaitlistForm.astro';
 import MasterCategories from '../components/MasterCategories.astro';
 import FinanceAI from '../components/FinanceAI.astro';
 import HomeAssistant from '../components/HomeAssistant.astro';
@@ -30,7 +29,16 @@ const pillarData = [
         titlePart2="vieții tale digitale"
         subtitle="Majordomul Financiar este primul pas spre suveranitate digitală completă. Datele tale rămân în controlul tău."
     >
-        <WaitlistForm slot="form-area" />
+        <div slot="form-area" class="w-full max-w-md mx-auto mt-8 p-2 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <iframe
+                src="https://dorulian.substack.com/embed"
+                width="100%"
+                height="320"
+                style="border:none; background:transparent !important;"
+                frameborder="0"
+                scrolling="no">
+            </iframe>
+        </div>
     </HeroSection>
 
 <MasterCategories>
@@ -348,7 +356,6 @@ const pillarData = [
         title="Gata să-ți iei viața înapoi?"
         subtitle="Alătură-te revoluției suveranității digitale astăzi."
     />
-    <WaitlistForm slot="form-area" />
 
     <Footer>
         <div slot="brand">

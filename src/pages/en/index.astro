@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro'; // Două seturi de puncte
 import Header from '../../components/Header.astro';
 import HeroSection from '../../components/HeroSection.astro';
-import WaitlistForm from '../../components/WaitlistForm.astro';
 import MasterCategories from '../../components/MasterCategories.astro';
 import FinanceAI from '../../components/FinanceAI.astro';
 import HomeAssistant from '../../components/HomeAssistant.astro';
@@ -29,11 +28,16 @@ const pillarData = [
         titlePart2="of your digital life"
         subtitle="Starting with the Financial Butler — the first step toward complete digital sovereignty. Your data stays at home, not on corporate servers."
     >
-	<WaitlistForm
-		slot="form-area"
-		placeholder="your@email.com"
-		buttonText="Reserve Priority Access"
-	/>
+        <div slot="form-area" class="w-full max-w-md mx-auto mt-8 p-2 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+            <iframe
+                src="https://dorulian.substack.com/embed"
+                width="100%"
+                height="320"
+                style="border:none; background:transparent !important;"
+                frameborder="0"
+                scrolling="no">
+            </iframe>
+        </div>
 
 </HeroSection>
 
@@ -347,12 +351,6 @@ const pillarData = [
             answer="The AI analyzes capital leaks, optimizes debt interest, and offers investment strategies. You don't just save on subscriptions; you learn to manage your wealth more efficiently."
         />
     </FAQ>
-
-    <WaitlistForm
-    slot="form-area"
-    placeholder="your@email.com"
-    buttonText="Reserve Priority Access"
-/>
 
 <CTA
     title="Ready to take your life back?"
