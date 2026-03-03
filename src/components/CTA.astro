@@ -5,7 +5,7 @@ interface Props {
   subtitle: string;
 }
 const { title, subtitle } = Astro.props;
-import WaitlistForm from './WaitlistForm.astro';
+import SubstackEmbed from './SubstackEmbed.astro';
 ---
 <section class="py-20 px-6">
   <div class="max-w-5xl mx-auto">
@@ -16,7 +16,7 @@ import WaitlistForm from './WaitlistForm.astro';
       <p class="text-subtitle max-w-2xl mx-auto mb-10">
         {subtitle}
       </p>
-      <WaitlistForm />
+      <SubstackEmbed />
     </div>
   </div>
 </section>

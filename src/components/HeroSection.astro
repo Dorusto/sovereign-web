@@ -8,6 +8,7 @@ interface Props {
 
 const { titlePart1, titlePart2, subtitle } = Astro.props;
 import TrustBadges from './TrustBadges.astro';
+import SubstackEmbed from './SubstackEmbed.astro';
 ---
 <section class="relative section-padding overflow-hidden">
   <div class="absolute inset-0 -z-10">
@@ -25,7 +26,7 @@ import TrustBadges from './TrustBadges.astro';
         {subtitle}
       </p>
 
-    <slot name="form-area" />
+    <SubstackEmbed />
 
     <TrustBadges />
   </div>
